@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --highlight-color: red;
+  --highlight: red;
 }
 
 body {

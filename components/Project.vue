@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Project } from '~/types';
+import type { Project } from '~/github';
 
 defineProps<{
   project: Project;
@@ -7,28 +7,41 @@ defineProps<{
 </script>
 
 <template>
-  <div class="rounded dark:bg-white bg-black p-4 flex flex-col gap-1">
+  <div class="flex flex-col gap-1 rounded bg-black p-4 dark:bg-white">
     <a
-      target="_blank"
-      rel="noreferrer noopener"
+      class="text-xl font-semibold text-white dark:text-black"
       :href="project?.GithubUrl ?? project?.HomepageUrl ?? '#'"
-      class="text-white dark:text-black font-medium text-xl font-semibold"
+      rel="noreferrer noopener"
+      target="_blank"
       >{{ project.Name }}</a
     >
 
     <p
-      class="text-white dark:text-black font-medium text-base"
+      class="text-base font-medium text-white dark:text-black"
       :class="{ 'mb-5': project?.Languages?.length }"
     >
       {{ project.Description }}
     </p>
 
-    <div class="flex gap-2 mt-auto" v-if="project?.Languages?.length">
-      <ProjectLanguage
-        v-for="(language, languageIndex) of project.Languages"
+    <div v-if="project?.Languages?.length" class="mt-auto flex gap-2">
+      <div
+        v-for="(language, languageIndex) of project?.Languages ?? []"
         :key="languageIndex"
+        class="rounded px-2 py-1"
         :language="language"
-      />
+        :style="{
+          backgroundColor: language?.Color || 'deeppink',
+        }"
+      >
+        <p
+          class="text-sm font-medium brightness-50"
+          :style="{
+            color: language?.Color || 'deeppink',
+          }"
+        >
+          {{ language.Name }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
