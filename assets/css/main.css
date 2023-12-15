@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --highlight-color: red;
+}
+
+body {
+  @apply bg-white dark:bg-black;
+  @apply text-black dark:text-white;
+}
