@@ -25,7 +25,7 @@ export default defineEventHandler(async (event): Promise<Project[]> => {
       method: 'POST',
       headers: {
         authorization: `Bearer ${config.githubApiKey}`,
-        'user-agent': 'MadsHougesen +http://yandex.com/bots',
+        'user-agent': 'MadsHougesen +http://mhouge.dk',
       },
       body: {
         query: `
