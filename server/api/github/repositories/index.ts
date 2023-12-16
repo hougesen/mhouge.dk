@@ -16,19 +16,20 @@ type GithubReposoryResponse = {
   };
 };
 
-export default defineEventHandler(async (event): Promise<Project[]> => {
-  const config = useRuntimeConfig(event);
+export default defineCachedEventHandler(
+  async (event): Promise<Project[]> => {
+    const config = useRuntimeConfig(event);
 
-  const response = await $fetch<GithubReposoryResponse>(
-    'https://api.github.com/graphql',
-    {
-      method: 'POST',
-      headers: {
-        authorization: `Bearer ${config.githubApiKey}`,
-        'user-agent': 'MadsHougesen +http://mhouge.dk',
-      },
-      body: {
-        query: `
+    const response = await $fetch<GithubReposoryResponse>(
+      'https://api.github.com/graphql',
+      {
+        method: 'POST',
+        headers: {
+          authorization: `Bearer ${config.githubApiKey}`,
+          'user-agent': 'MadsHougesen +http://mhouge.dk',
+        },
+        body: {
+          query: `
             query GET_PROJECTS {
               user(login: "hougesen") {
                 pinnedItems(first: 6) {
@@ -53,12 +54,14 @@ export default defineEventHandler(async (event): Promise<Project[]> => {
               }
             }
           `,
+        },
       },
-    },
-  );
+    );
 
-  return (response?.data?.user?.pinnedItems?.nodes ?? []).map((p) => ({
-    ...p,
-    languages: p?.languages?.nodes ?? [],
-  }));
-});
+    return (response?.data?.user?.pinnedItems?.nodes ?? []).map((p) => ({
+      ...p,
+      languages: p?.languages?.nodes ?? [],
+    }));
+  },
+  { maxAge: 14400 },
+);
