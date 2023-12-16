@@ -1,5 +1,44 @@
 <script setup lang="ts">
 import { switchHighlightColor } from '~/colors';
+import type { WakatimeStatResponse } from '~/wakatime';
+
+defineProps<{
+  languages?: WakatimeStatResponse['data']['languages'];
+}>();
+
+const defaultLanguages = ['Rust', 'Python', 'TypeScript'];
+
+function formatLanguageText(inputLanguages?: string[]) {
+  const l =
+    inputLanguages &&
+    typeof inputLanguages === 'object' &&
+    Array.isArray(inputLanguages) &&
+    inputLanguages?.length
+      ? inputLanguages
+      : defaultLanguages;
+
+  let formatted = '';
+
+  const maxLanguages = Math.min(l?.length ?? 0, 3);
+
+  for (let i = 0; i < maxLanguages; i += 1) {
+    if (i === 0) {
+      formatted += l[0];
+    } else if (i === maxLanguages - 1) {
+      if (formatted.length) {
+        formatted += ' and ';
+      }
+      formatted += l[i];
+    } else {
+      if (formatted.length) {
+        formatted += ', ';
+      }
+      formatted += l[i];
+    }
+  }
+
+  return formatted;
+}
 </script>
 
 <template>
@@ -17,7 +56,10 @@ import { switchHighlightColor } from '~/colors';
 
       <p class="text-xl text-black dark:text-white">
         I am a software developer from Denmark. Lover of all things programming.
-        Currently into Rust, Python and TypeScript.
+        Lately I have been writing a lot of
+        {{
+          formatLanguageText(languages?.map((l) => l.name) || defaultLanguages)
+        }}
       </p>
 
       <p class="text-xl text-white dark:text-white">
