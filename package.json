@@ -8,6 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck",
     "format": "prettier --write --cache .",
     "lint": "eslint --ext \".ts,.vue\" --ignore-path .gitignore .",
     "lint:fix": "eslint --fix --ext \".ts,.vue\" --ignore-path .gitignore ."
@@ -32,6 +33,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@nuxt/image": "^1.1.0"
+    "@nuxt/image": "^1.1.0",
+    "axios": "^1.6.2"
   }
 }

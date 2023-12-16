@@ -17,4 +17,8 @@ export default defineNuxtConfig({
       autoSubfolderIndex: true,
     },
   },
+
+  runtimeConfig: {
+    githubApiKey: '',
+  },
 });

@@ -10,36 +10,36 @@ defineProps<{
   <div class="flex flex-col gap-1 rounded bg-black p-4 dark:bg-white">
     <a
       class="text-xl font-semibold text-white dark:text-black"
-      :href="project?.GithubUrl ?? project?.HomepageUrl ?? '#'"
+      :href="project?.url ?? project?.homepageUrl ?? '#'"
       rel="noreferrer noopener"
       target="_blank"
-      >{{ project.Name }}</a
+      >{{ project.name }}</a
     >
 
     <p
       class="text-base font-medium text-white dark:text-black"
-      :class="{ 'mb-5': project?.Languages?.length }"
+      :class="{ 'mb-5': project?.languages?.length }"
     >
-      {{ project.Description }}
+      {{ project.description }}
     </p>
 
-    <div v-if="project?.Languages?.length" class="mt-auto flex gap-2">
+    <div v-if="project?.languages?.length" class="mt-auto flex gap-2">
       <div
-        v-for="(language, languageIndex) of project?.Languages ?? []"
+        v-for="(language, languageIndex) of project?.languages ?? []"
         :key="languageIndex"
         class="rounded px-2 py-1"
         :language="language"
         :style="{
-          backgroundColor: language?.Color || 'deeppink',
+          backgroundColor: language?.color || 'deeppink',
         }"
       >
         <p
           class="text-sm font-medium brightness-50"
           :style="{
-            color: language?.Color || 'deeppink',
+            color: language?.color || 'deeppink',
           }"
         >
-          {{ language.Name }}
+          {{ language.name }}
         </p>
       </div>
     </div>
