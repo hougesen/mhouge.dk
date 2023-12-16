@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    githubApiKey: '',
-    wakatimeApiKey: '',
+    githubApiKey: process?.env?.NUXT_GITHUB_API_KEY ?? '',
+    wakatimeApiKey: process?.env?.NUXT_WAKATIME_API_KEY ?? '',
   },
 });
