@@ -32,26 +32,24 @@ const data = computed(() => {
 </script>
 
 <template>
-  <div class="rounded bg-white-secondary p-4 dark:bg-black-secondary">
-    <table>
-      <tbody>
-        <tr v-for="(point, pointIndex) of data" :key="pointIndex">
-          <td
-            class="whitespace-pre pr-4 text-right text-lg font-medium text-black-primary dark:text-white-primary"
-          >
-            <p class="min-w-[12.5rem]">
-              {{ point.name }} ({{ point.percent.toFixed(2) }}%)
-            </p>
-          </td>
+  <table>
+    <tbody>
+      <tr v-for="(point, pointIndex) of data" :key="pointIndex">
+        <td
+          class="whitespace-pre pr-4 text-right text-lg font-medium text-black-primary dark:text-white-primary"
+        >
+          <p class="min-w-[12.5rem]">
+            {{ point.name }} ({{ point.percent.toFixed(2) }}%)
+          </p>
+        </td>
 
-          <td class="w-full">
-            <div
-              class="h-[1.25rem] rounded border border-black-secondary bg-[color:var(--highlight)] duration-1000 dark:border-white-secondary"
-              :style="{ width: `${point.percent}%` }"
-            ></div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+        <td class="w-full">
+          <div
+            class="h-[1.25rem] rounded border border-black-secondary bg-[color:var(--highlight)] duration-1000 dark:border-white-secondary"
+            :style="{ width: `${point.percent}%` }"
+          ></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </template>

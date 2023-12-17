@@ -19,12 +19,14 @@ const { data: metrics } = useFetch('/api/wakatime');
           {{ metrics?.languages?.[0]?.name ?? 'Rust' }}.
         </p>
 
-        <div class="mx-auto w-full lg:max-w-4xl xl:max-w-5xl 2xl:max-w-7xl">
-          <ChartsBar
-            :minimum-percent="0.5"
-            :points="metrics?.languages ?? []"
-          />
-        </div>
+        <Tile>
+          <div class="mx-auto w-full lg:max-w-4xl xl:max-w-5xl 2xl:max-w-7xl">
+            <ChartsBar
+              :minimum-percent="0.5"
+              :points="metrics?.languages ?? []"
+            />
+          </div>
+        </Tile>
       </div>
 
       <div v-if="metrics?.editors?.length" class="flex w-full flex-col gap-4">
@@ -32,9 +34,14 @@ const { data: metrics } = useFetch('/api/wakatime');
           Primarily using {{ metrics?.editors?.[0]?.name ?? 'neovim' }}.
         </p>
 
-        <div class="mx-auto w-full lg:max-w-4xl xl:max-w-5xl 2xl:max-w-7xl">
-          <ChartsBar :minimum-percent="0.5" :points="metrics?.editors ?? []" />
-        </div>
+        <Tile>
+          <div class="mx-auto w-full lg:max-w-4xl xl:max-w-5xl 2xl:max-w-7xl">
+            <ChartsBar
+              :minimum-percent="0.5"
+              :points="metrics?.editors ?? []"
+            />
+          </div>
+        </Tile>
       </div>
 
       <div
@@ -45,12 +52,14 @@ const { data: metrics } = useFetch('/api/wakatime');
           I pretty much only use {{ metrics?.operating_systems?.[0]?.name }}.
         </p>
 
-        <div class="mx-auto w-full lg:max-w-4xl xl:max-w-5xl 2xl:max-w-7xl">
-          <ChartsBar
-            :minimum-percent="0.5"
-            :points="metrics?.operating_systems ?? []"
-          />
-        </div>
+        <Tile>
+          <div class="mx-auto w-full lg:max-w-4xl xl:max-w-5xl 2xl:max-w-7xl">
+            <ChartsBar
+              :minimum-percent="0.5"
+              :points="metrics?.operating_systems ?? []"
+            />
+          </div>
+        </Tile>
       </div>
     </section>
 
