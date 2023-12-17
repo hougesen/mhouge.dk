@@ -35,15 +35,22 @@ const data = computed(() => {
   <table>
     <tbody>
       <tr v-for="(point, pointIndex) of data" :key="pointIndex">
+        <td class="w-full md:hidden">
+          <div
+            class="h-[1.25rem] rounded border border-black-secondary bg-[color:var(--highlight)] duration-1000 dark:border-white-secondary"
+            :style="{ width: `${point.percent}%` }"
+          ></div>
+        </td>
+
         <td
-          class="whitespace-pre pr-4 text-right text-lg font-medium text-black-primary dark:text-white-primary"
+          class="whitespace-pre text-right text-lg font-medium text-black-primary dark:text-white-primary md:pr-4"
         >
-          <p class="min-w-[12.5rem]">
+          <p class="min-w-[11.25rem]">
             {{ point.name }} ({{ point.percent.toFixed(2) }}%)
           </p>
         </td>
 
-        <td class="w-full">
+        <td class="hidden w-full md:table-cell">
           <div
             class="h-[1.25rem] rounded border border-black-secondary bg-[color:var(--highlight)] duration-1000 dark:border-white-secondary"
             :style="{ width: `${point.percent}%` }"
