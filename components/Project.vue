@@ -26,24 +26,11 @@ defineProps<{
     </p>
 
     <div v-if="project?.languages?.length" class="mt-auto flex gap-2">
-      <div
+      <ProjectLanguage
         v-for="(language, languageIndex) of project?.languages ?? []"
         :key="languageIndex"
-        class="rounded px-2 py-1"
         :language="language"
-        :style="{
-          backgroundColor: language?.color || 'deeppink',
-        }"
-      >
-        <p
-          class="text-sm font-medium brightness-50"
-          :style="{
-            color: language?.color || 'deeppink',
-          }"
-        >
-          {{ language.name }}
-        </p>
-      </div>
+      />
     </div>
   </div>
 </template>
