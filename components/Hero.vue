@@ -37,16 +37,23 @@ function formatLanguageText(inputLanguages?: string[]) {
     }
   }
 
-  return formatted;
+  if (formatted?.length) {
+    return `Lately I have been writing a lot of ${formatted}.`;
+  }
+
+  return '';
 }
 </script>
 
 <template>
-  <section class="grid grid-cols-1 items-center gap-4 lg:grid-cols-2">
+  <section
+    id="about"
+    class="grid grid-cols-1 items-center gap-4 lg:grid-cols-2"
+  >
     <div class="flex flex-col gap-4">
       <h1 class="text-5xl font-bold text-black dark:text-white lg:text-6xl">
         <span
-          class="text-[color:var(--highlight)]"
+          class="text-[color:var(--highlight)] duration-300"
           @focus="switchHighlightColor"
           @mouseenter="switchHighlightColor"
           >Hi,</span
@@ -56,7 +63,6 @@ function formatLanguageText(inputLanguages?: string[]) {
 
       <p class="text-xl text-black dark:text-white">
         I am a software developer from Denmark. Lover of all things programming.
-        Lately I have been writing a lot of
         {{
           formatLanguageText(languages?.map((l) => l.name) || defaultLanguages)
         }}
@@ -113,7 +119,7 @@ function formatLanguageText(inputLanguages?: string[]) {
       alt="Image of Mads Hougesen"
       class="order-first mx-auto w-9/12 lg:order-1 lg:mr-0 lg:w-fit lg:text-right"
       format="avif,webp"
-      img-attrs="mr-auto lg:mr-0 ml-auto lg:text-right"
+      :img-attrs="{ class: 'mr-auto lg:mr-0 ml-auto lg:text-right' }"
       src="/mads-hougesen-image.png"
     />
   </section>

@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col gap-2">
+  <section id="contact" class="flex flex-col gap-2">
     <SectionTitle> Wanna get in touch? </SectionTitle>
 
     <p class="text-xl text-black dark:text-white">
