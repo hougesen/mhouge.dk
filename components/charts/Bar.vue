@@ -15,7 +15,10 @@ const data = computed(() => {
   let len = 0;
 
   for (const point of props?.points ?? []) {
-    if (!props.minimumPercent || point.percent >= props.minimumPercent) {
+    if (
+      (!props.minimumPercent || point.percent >= props.minimumPercent) &&
+      point?.name?.toLowerCase() !== 'other'
+    ) {
       const name = `${point.name?.trim()} (${point.percent.toFixed(2)}%)`;
 
       points.push({ name, percent: point.percent });
