@@ -14,7 +14,7 @@ const { data: metrics } = useFetch('/api/wakatime');
       <SectionTitle> Me as a Developer </SectionTitle>
 
       <div v-if="metrics?.languages?.length" class="flex w-full flex-col gap-4">
-        <p class="text-xl text-black dark:text-white">
+        <p class="text-xl text-black-primary dark:text-white-primary">
           Lately I have been writing a lot of
           {{ metrics?.languages?.[0]?.name ?? 'Rust' }}.
         </p>
@@ -28,7 +28,7 @@ const { data: metrics } = useFetch('/api/wakatime');
       </div>
 
       <div v-if="metrics?.editors?.length" class="flex w-full flex-col gap-4">
-        <p class="text-xl text-black dark:text-white">
+        <p class="text-xl text-black-primary dark:text-white-primary">
           Primarily using {{ metrics?.editors?.[0]?.name ?? 'neovim' }}.
         </p>
 
@@ -41,7 +41,7 @@ const { data: metrics } = useFetch('/api/wakatime');
         v-if="metrics?.operating_systems?.length"
         class="flex w-full flex-col gap-4"
       >
-        <p class="text-xl text-black dark:text-white">
+        <p class="text-xl text-black-primary dark:text-white-primary">
           I pretty much only use {{ metrics?.operating_systems?.[0]?.name }}.
         </p>
 

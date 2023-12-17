@@ -51,7 +51,9 @@ function formatLanguageText(inputLanguages?: string[]) {
     class="grid grid-cols-1 items-center gap-4 lg:grid-cols-2"
   >
     <div class="flex flex-col gap-4">
-      <h1 class="text-5xl font-bold text-black dark:text-white lg:text-6xl">
+      <h1
+        class="text-5xl font-bold text-black-primary dark:text-white-primary lg:text-6xl"
+      >
         <span
           class="text-[color:var(--highlight)] duration-300"
           @focus="switchHighlightColor"
@@ -61,14 +63,14 @@ function formatLanguageText(inputLanguages?: string[]) {
         I'm Mads
       </h1>
 
-      <p class="text-xl text-black dark:text-white">
+      <p class="text-xl text-black-primary dark:text-white-primary">
         I am a software developer from Denmark. Lover of all things programming.
         {{
           formatLanguageText(languages?.map((l) => l.name) || defaultLanguages)
         }}
       </p>
 
-      <p class="text-xl text-white dark:text-white">
+      <p class="text-dark-primary text-xl dark:text-white-primary">
         I work @
         <a
           class="underline"
@@ -81,7 +83,9 @@ function formatLanguageText(inputLanguages?: string[]) {
         projects I've worked on include:
       </p>
 
-      <ul class="mb-4 ml-8 list-disc text-xl text-black dark:text-white">
+      <ul
+        class="mb-4 ml-8 list-disc text-xl text-black-primary dark:text-white-primary"
+      >
         <li>
           A tool for automatically
           <a

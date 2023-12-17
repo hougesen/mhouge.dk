@@ -7,9 +7,11 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex flex-col gap-1 rounded bg-black p-4 dark:bg-white">
+  <div
+    class="flex flex-col gap-1 rounded bg-white-secondary p-4 dark:bg-white-primary"
+  >
     <a
-      class="text-xl font-semibold text-white dark:text-black"
+      class="text-dark-primary text-xl font-semibold dark:text-black-primary"
       :href="project?.url ?? project?.homepageUrl ?? '#'"
       rel="noreferrer noopener"
       target="_blank"
@@ -17,7 +19,7 @@ defineProps<{
     >
 
     <p
-      class="text-base font-medium text-white dark:text-black"
+      class="text-dark-secondary text-base font-medium dark:text-black-primary"
       :class="{ 'mb-5': project?.languages?.length }"
     >
       {{ project.description }}

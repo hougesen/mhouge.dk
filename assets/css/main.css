@@ -7,6 +7,6 @@
 }
 
 body {
-  @apply bg-white dark:bg-black;
-  @apply text-black dark:text-white;
+  @apply bg-white-primary dark:bg-black-primary;
+  @apply text-black-primary dark:text-white-primary;
 }

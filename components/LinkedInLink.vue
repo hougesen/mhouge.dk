@@ -6,7 +6,7 @@
     target="_blank"
   >
     <IconsLinkedIn
-      class="aspect-square h-12 w-12 rounded bg-black p-2 text-white duration-300 hover:text-[color:var(--highlight)] dark:bg-white dark:text-black"
+      class="aspect-square h-12 w-12 rounded bg-black-primary p-2 text-white-primary duration-300 hover:text-[color:var(--highlight)] dark:bg-white-primary dark:text-black-primary"
     />
   </a>
 </template>
