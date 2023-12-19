@@ -1,7 +1,7 @@
 ---
 title: Choosing a tech stack as a junior developer
 date created: 2023-12-19T22:20:26Z
-date modified: 2023-12-20T00:05:53Z
+date modified: 2023-12-20T00:35:52Z
 ---
 
 As a junior developer you will often hear that the framework (or language) you choose doesn't matter. The people saying that are correct in the grand scheme of things. But they are overlooking the fact that it can have a big impact on how fast you can contribute as an inexperienced developer.

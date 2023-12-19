@@ -7,7 +7,7 @@ const { data: navigation } = await useAsyncData('navigation', () =>
   fetchContentNavigation().then(
     (dirs) =>
       dirs
-        ?.find((dir) => dir._path === '/blog')
+        ?.find((dir) => dir?._path === '/blog')
         ?.children?.filter((post) => !post?._draft) || [],
   ),
 );
