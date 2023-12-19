@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  modules: ['@nuxt/image', 'nuxt-simple-sitemap'],
+  modules: ['@nuxt/image', '@nuxt/content', 'nuxt-simple-sitemap'],
 
   postcss: {
     plugins: {
@@ -37,4 +37,6 @@ export default defineNuxtConfig({
     enabled: true,
     cacheMaxAgeSeconds: 3600,
   },
+
+  content: {},
 });
