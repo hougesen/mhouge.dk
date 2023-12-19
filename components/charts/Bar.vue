@@ -45,7 +45,7 @@ const data = computed(() => {
         <td
           class="whitespace-pre text-right text-lg font-medium text-black-primary dark:text-white-primary md:pr-4"
         >
-          <p class="min-w-[11.25rem]">
+          <p class="min-w-[11.25rem] xl:min-w-fit">
             {{ point.name }} ({{ point.percent.toFixed(2) }}%)
           </p>
         </td>
