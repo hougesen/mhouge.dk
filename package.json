@@ -1,5 +1,23 @@
 {
   "name": "mhouge.dk",
+  "version": "0.0.0",
+  "description": "My personal website hosted at mhouge.dk",
+  "homepage": "https://mhouge.dk",
+  "bugs": {
+    "url": "https://github.com/hougesen/mhouge.dk"
+  },
+  "contributors": [
+    {
+      "name": "Mads Hougesen",
+      "url": "https://mhouge.dk",
+      "email": "mads@mhouge.dk"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hougesen/mhouge.dk"
+  },
+  "license": "MIT",
   "private": true,
   "type": "module",
   "scripts": {
