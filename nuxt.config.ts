@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  modules: ['@nuxt/image'],
+  modules: ['@nuxt/image', 'nuxt-simple-sitemap'],
 
   postcss: {
     plugins: {
@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     prerender: {
       autoSubfolderIndex: true,
       crawlLinks: true,
+      routes: ['/'],
     },
   },
 
@@ -26,5 +27,14 @@ export default defineNuxtConfig({
 
   image: {
     domains: ['mhouge.dk'],
+  },
+
+  site: {
+    url: 'https://mhouge.dk',
+  },
+
+  sitemap: {
+    enabled: true,
+    cacheMaxAgeSeconds: 3600,
   },
 });

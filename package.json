@@ -16,6 +16,8 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "@types/eslint": "^8.44.9",
+    "@types/eslint-config-prettier": "^6.11.3",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
     "autoprefixer": "^10.4.16",
@@ -26,6 +28,7 @@
     "eslint-plugin-vue": "^9.19.2",
     "eslint-plugin-vuejs-accessibility": "^2.2.0",
     "nuxt": "^3.8.2",
+    "nuxt-simple-sitemap": "^4.2.0",
     "postcss": "^8.4.32",
     "prettier": "^3.1.1",
     "tailwindcss": "^3.3.6",
