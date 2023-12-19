@@ -12,7 +12,9 @@
       <ContentRenderer :value="doc" />
     </article>
 
-    <NuxtLink class="mx-auto text-center font-bold text-white-secondary" to="/"
+    <NuxtLink
+      class="mx-auto text-center font-bold text-black-secondary dark:text-white-secondary"
+      to="/"
       >Back home</NuxtLink
     >
   </ContentDoc>
