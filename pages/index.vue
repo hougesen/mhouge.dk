@@ -20,7 +20,7 @@ const { data: navigation } = await useAsyncData('navigation', () =>
     <Projects :projects="repositories || []" />
 
     <section v-if="navigation?.length" class="flex flex-col gap-4">
-      <SectionTitle class="mb-4"> Blog </SectionTitle>
+      <SectionTitle class="mb-4"> Thoughts </SectionTitle>
 
       <NuxtLink
         v-for="link of navigation"
