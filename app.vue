@@ -11,8 +11,13 @@ const titleTemplate = (title?: string) => {
   return baseTitle;
 };
 
-useServerSeoMeta({
-  title: baseTitle,
+useHead({
+  title: () => baseTitle,
+  titleTemplate,
+});
+
+useSeoMeta({
+  title: () => baseTitle,
   titleTemplate,
   author: 'Mads Hougesen',
   description: baseDescription,
