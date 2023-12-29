@@ -19,7 +19,7 @@ defineProps<{
     >
 
     <p
-      class="text-dark-secondary text-base font-medium dark:text-black-primary"
+      class="text-dark-secondary dark:text-black-primary"
       :class="{ 'mb-5': project?.languages?.length }"
     >
       {{ project.description }}
