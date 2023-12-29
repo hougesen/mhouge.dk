@@ -46,12 +46,12 @@
     "eslint-plugin-tailwindcss": "^3.13.0",
     "eslint-plugin-vue": "^9.19.2",
     "eslint-plugin-vuejs-accessibility": "^2.2.0",
-    "nuxt": "^3.8.2",
+    "nuxt": "^3.9.0",
     "nuxt-simple-sitemap": "^4.2.0",
     "postcss": "^8.4.32",
     "prettier": "^3.1.1",
     "tailwindcss": "^3.3.6",
-    "vue": "^3.3.10",
+    "vue": "^3.4.0",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
