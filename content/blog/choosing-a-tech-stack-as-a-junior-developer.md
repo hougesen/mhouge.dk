@@ -1,7 +1,7 @@
 ---
 title: Choosing a tech stack as a junior developer
 date created: 2023-12-19T22:20:26Z
-date modified: 2023-12-22T00:57:37Z
+date modified: 2024-01-09T14:23:56Z
 ---
 
 As a junior developer you will often hear that the framework (or language) you choose doesn't matter. The people saying that are correct in the grand scheme of things. But they are overlooking the fact that it can have a big impact on how fast you can contribute as an inexperienced developer.
@@ -16,4 +16,4 @@ One such example is [Svelte](https://svelte.dev/). Svelte is a great frontend f
 
 When all that has been said, tech stack should never be a limiter. You should never be afraid of applying to a job just because you don't have experience with their tech stack, or of learning a new technology just because there isn't any jobs.
 
-Experimenting with new technologies is one of the best ways to learn, since it helps you better understand why a technology was designed the way it was. For instance, this very website has been recreated more times than I can count, among them being in [.NET Razor](https://github.com/hougesen/portfolio-razor), [Fresh](https://github.com/hougesen/portfolio-fresh), [Svelte](https://github.com/hougesen/portfolio-svelte) and now [Nuxt](https://github.com/hougesen/mhouge.dk).
+Experimenting with new technologies is one of the best ways to learn, since it helps you better understand why a technology was designed the way it was. For instance, this website has been recreated more times than I can count, among them being in [.NET Razor](https://github.com/hougesen/portfolio-razor), [Fresh](https://github.com/hougesen/portfolio-fresh), [Svelte](https://github.com/hougesen/portfolio-svelte) and now [Nuxt](https://github.com/hougesen/mhouge.dk).
