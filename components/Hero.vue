@@ -52,7 +52,7 @@ function formatLanguageText(inputLanguages?: string[]) {
   >
     <div class="flex flex-col gap-4">
       <h1
-        class="text-5xl font-bold text-black-primary dark:text-white-primary lg:text-6xl"
+        class="text-5xl font-bold text-black-primary lg:text-6xl dark:text-white-primary"
       >
         <span
           class="text-[color:var(--highlight)] duration-300"

@@ -6,7 +6,7 @@
 
     <template #default="{ doc }">
       <article
-        class="prose mx-auto rounded-lg p-8 dark:prose-invert lg:prose-xl"
+        class="prose mx-auto rounded-lg p-8 lg:prose-xl dark:prose-invert"
       >
         <h1>{{ doc.title }}</h1>
 
