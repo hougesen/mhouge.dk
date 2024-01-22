@@ -4,3 +4,6 @@ updates:
     directory: '/'
     schedule:
       interval: 'weekly'
+    assignees:
+      - 'hougesen'
+    open-pull-requests-limit: 25
