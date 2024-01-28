@@ -32,7 +32,7 @@
     "lint:fix": "eslint --fix --ext \".ts,.vue\" --ignore-path .gitignore ."
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
+    "@nuxt/devtools": "^1.0.8",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@tailwindcss/typography": "^0.5.10",
     "@types/eslint": "^8.56.2",
