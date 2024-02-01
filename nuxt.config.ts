@@ -1,7 +1,12 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  modules: ['@nuxt/image', '@nuxt/content', 'nuxt-simple-sitemap'],
+  modules: [
+    '@nuxt/image',
+    '@nuxt/content',
+    'nuxt-simple-sitemap',
+    'nuxt-simple-robots',
+  ],
 
   postcss: {
     plugins: {

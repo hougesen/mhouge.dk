@@ -8,7 +8,7 @@ As a junior developer you will often hear that the framework (or language) you c
 
 One of the hardest things when you start working at a new company is getting comfortable with a new codebase. Having to learn a new framework at the same time will make that task a great deal harder.
 
-Already having a basic understanding of the tech stack means you can start producing code, and understand the design decisions taken, **a lot** faster. At the same time it also has the positive benefit for you of making sure that you *actually* like working with it.
+Already having a basic understanding of the tech stack means you can start producing code, and understand the design decisions taken, **a lot** faster. At the same time it also has the positive benefit of making sure that you *actually* like working with it.
 
 When you are getting started as a developer the best thing you can do is research the job market in your area. Learning what the people close to you are using will make the job hunt a lot easier, since it makes you more marketable. It also reduces the risk of you learning a technology that isn't used (_yet?_).
 
