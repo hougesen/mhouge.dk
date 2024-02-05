@@ -50,7 +50,7 @@
     "nuxt-simple-robots": "^4.0.0-rc.13",
     "nuxt-simple-sitemap": "^4.4.1",
     "postcss": "^8.4.32",
-    "prettier": "^3.2.4",
+    "prettier": "^3.2.5",
     "tailwindcss": "^3.4.1",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5"
