@@ -28,6 +28,7 @@
     "postinstall": "nuxt prepare",
     "typecheck": "nuxt typecheck",
     "format": "prettier --write --cache .",
+    "format:check": "prettier --check --cache .",
     "lint": "eslint --ext \".ts,.vue\" --ignore-path .gitignore .",
     "lint:fix": "eslint --fix --ext \".ts,.vue\" --ignore-path .gitignore ."
   },
