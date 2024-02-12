@@ -1,0 +1,47 @@
+name: lint
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  format-lint:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [20]
+
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v4
+
+      - name: Setup node env 🏗
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          check-latest: true
+
+      - name: Cache node_modules 📦
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies 👨🏻‍💻
+        run: npm install
+
+      - name: Verify lint 👀
+        run: npm run lint:fix
+
+      - name: Verify types
+        run: npm run typecheck
+
+      - name: Verify build
+        run: npm run build
+
+      - name: Verify formatting  💎
+        run: npm run format:check
