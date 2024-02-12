@@ -7,3 +7,11 @@ updates:
     assignees:
       - 'hougesen'
     open-pull-requests-limit: 25
+
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    assignees:
+      - 'hougesen'
+    open-pull-requests-limit: 25
