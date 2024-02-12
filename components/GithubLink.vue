@@ -6,7 +6,7 @@
     target="_blank"
   >
     <IconsGithub
-      class="aspect-square h-12 w-12 rounded bg-black-primary p-2 text-white-primary duration-300 hover:text-[color:var(--highlight)] dark:bg-white-primary dark:text-black-primary"
+      class="aspect-square size-12 rounded bg-black-primary p-2 text-white-primary duration-300 hover:text-[color:var(--highlight)] dark:bg-white-primary dark:text-black-primary"
     />
   </a>
 </template>

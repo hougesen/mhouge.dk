@@ -5,7 +5,7 @@ defineProps<{
   language: Language;
 }>();
 
-const customLanguageColors = {
+const customLanguageColors: Record<string, string> = {
   '': 'deeppink',
   lua: '#fff',
 };
