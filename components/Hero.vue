@@ -6,6 +6,8 @@ defineProps<{
   languages?: WakatimeStatResponse['data']['languages'];
 }>();
 
+const hiddenLanguages = ['Other', 'netrw'];
+
 const defaultLanguages = ['Rust', 'Python', 'TypeScript'];
 
 function formatLanguageText(inputLanguages?: string[]) {
@@ -17,18 +19,36 @@ function formatLanguageText(inputLanguages?: string[]) {
       ? inputLanguages
       : defaultLanguages;
 
-  let formatted = '';
-
   const maxLanguages = Math.min(l?.length ?? 0, 3);
 
-  for (let i = 0; i < maxLanguages; i += 1) {
+  const pickedLanguages: string[] = [];
+
+  for (
+    let i = 0;
+    pickedLanguages.length < maxLanguages && i < l.length;
+    i += 1
+  ) {
+    const language = l[i];
+
+    if (!language || !language.length || hiddenLanguages.includes(language)) {
+      continue;
+    }
+
+    pickedLanguages.push(language);
+  }
+
+  let formatted = '';
+
+  for (let i = 0; i < pickedLanguages.length; i += 1) {
+    const language = pickedLanguages[i];
+
     if (i === 0) {
-      formatted += l[0];
-    } else if (i === maxLanguages - 1) {
+      formatted += language;
+    } else if (i === pickedLanguages.length - 1) {
       if (formatted.length) {
         formatted += ' and ';
       }
-      formatted += l[i];
+      formatted += language;
     } else {
       if (formatted.length) {
         formatted += ', ';
@@ -37,11 +57,11 @@ function formatLanguageText(inputLanguages?: string[]) {
     }
   }
 
-  if (formatted?.length) {
-    return `Lately I have been writing a lot of ${formatted}.`;
+  if (!formatted?.length) {
+    formatted = 'Rust, TypeScript and Python';
   }
 
-  return '';
+  return `Lately I have been writing a lot of ${formatted}.`;
 }
 </script>
 
