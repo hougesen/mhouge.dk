@@ -47,7 +47,7 @@
     "eslint-plugin-tailwindcss": "^3.14.2",
     "eslint-plugin-vue": "^9.22.0",
     "eslint-plugin-vuejs-accessibility": "^2.2.1",
-    "nuxt": "^3.10.1",
+    "nuxt": "^3.10.3",
     "nuxt-simple-robots": "^4.0.0-rc.14",
     "nuxt-simple-sitemap": "^4.4.1",
     "postcss": "^8.4.35",
