@@ -8,8 +8,12 @@ defineProps<{
 
 <template>
   <ul class="!m-auto">
-    <li v-for="link in links ?? []" :key="link.text" class="!m-auto">
-      <a :href="`#${link.id}`" class="!text-base">
+    <li
+      v-for="(link, linkIndex) in links ?? []"
+      :key="link?.text ?? `${link?.depth}-${linkIndex}-${link?.text}`"
+      class="!m-auto"
+    >
+      <a class="!text-base" :href="`#${link.id}`">
         {{ link.text }}
       </a>
 
