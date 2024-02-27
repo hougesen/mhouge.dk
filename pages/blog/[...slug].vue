@@ -16,6 +16,13 @@
           </template>
         </p>
 
+        <h3 v-if="doc?.body?.toc?.links?.length">Contents</h3>
+
+        <TableOfContent
+          v-if="doc?.body?.toc?.links?.length"
+          :links="doc?.body?.toc?.links ?? []"
+        />
+
         <ContentRenderer :value="doc" />
       </article>
 
