@@ -34,3 +34,9 @@
     </template>
   </ContentDoc>
 </template>
+
+<style>
+img {
+  @apply rounded;
+}
+</style>
