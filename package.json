@@ -35,6 +35,7 @@
   "devDependencies": {
     "@nuxt/devtools": "^1.0.8",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "@nuxtjs/sitemap": "^5.1.0",
     "@tailwindcss/typography": "^0.5.10",
     "@types/eslint": "^8.56.3",
     "@types/eslint-config-prettier": "^6.11.3",
@@ -49,7 +50,6 @@
     "eslint-plugin-vuejs-accessibility": "^2.2.1",
     "nuxt": "^3.10.3",
     "nuxt-simple-robots": "^4.0.0-rc.14",
-    "nuxt-simple-sitemap": "^4.4.1",
     "postcss": "^8.4.35",
     "prettier": "^3.2.5",
     "tailwindcss": "^3.4.1",

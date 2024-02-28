@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/image',
     '@nuxt/content',
-    'nuxt-simple-sitemap',
+    '@nuxtjs/sitemap',
     'nuxt-simple-robots',
   ],
 
@@ -58,6 +58,9 @@ export default defineNuxtConfig({
   sitemap: {
     enabled: true,
     cacheMaxAgeSeconds: 3600,
+    autoLastmod: true,
+    discoverImages: true,
+    credits: false,
   },
 
   content: {},
