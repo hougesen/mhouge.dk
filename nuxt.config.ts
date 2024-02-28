@@ -64,4 +64,10 @@ export default defineNuxtConfig({
   },
 
   content: {},
+
+  robots: {
+    enabled: true,
+    disallow: ['/api', '/404'],
+    credits: false,
+  },
 });
