@@ -38,7 +38,7 @@ export default defineNuxtConfig({
     prerender: {
       autoSubfolderIndex: true,
       crawlLinks: true,
-      routes: ['/'],
+      routes: ['/', '/sitemap.xml'],
     },
   },
 
@@ -58,7 +58,6 @@ export default defineNuxtConfig({
   sitemap: {
     enabled: true,
     cacheMaxAgeSeconds: 3600,
-    autoLastmod: true,
     discoverImages: true,
     credits: false,
   },
