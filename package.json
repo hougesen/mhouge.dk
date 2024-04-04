@@ -52,7 +52,7 @@
     "nuxt-simple-robots": "^4.0.0-rc.14",
     "postcss": "^8.4.35",
     "prettier": "^3.2.5",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^3.4.3",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
