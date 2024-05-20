@@ -6,7 +6,7 @@ defineProps<{
   languages?: WakatimeStatResponse['data']['languages'];
 }>();
 
-const hiddenLanguages = ['Other', 'netrw'];
+const hiddenLanguages = ['other', 'netrw', 'json'];
 
 const defaultLanguages = ['Rust', 'Python', 'TypeScript'];
 
@@ -30,7 +30,11 @@ function formatLanguageText(inputLanguages?: string[]) {
   ) {
     const language = l[i];
 
-    if (!language || !language.length || hiddenLanguages.includes(language)) {
+    if (
+      !language ||
+      !language.length ||
+      hiddenLanguages.includes(language.toLowerCase())
+    ) {
       continue;
     }
 
@@ -63,6 +67,58 @@ function formatLanguageText(inputLanguages?: string[]) {
 
   return `Lately I have been writing a lot of ${formatted}.`;
 }
+
+const rotation = ref(15);
+
+const favicon = computed(() => {
+  if (!rotation.value) {
+    return [];
+  }
+
+  const v = rotation.value % 360;
+
+  const href = `/favicon${v === 0 ? '' : `-${v}`}.svg`;
+
+  return [
+    {
+      rel: 'icon',
+      type: 'image/svg+xml',
+      href,
+    },
+  ];
+});
+
+useHead({
+  link: favicon,
+});
+
+const rotateInterval = ref<ReturnType<typeof setInterval>>();
+
+function rotateFavicon() {
+  rotation.value += 15;
+}
+
+function startRotation() {
+  if (rotateInterval.value) {
+    return;
+  }
+
+  rotateFavicon();
+
+  rotateInterval.value = setInterval(rotateFavicon, 100);
+}
+
+function stopRotation() {
+  clearInterval(rotateInterval.value);
+
+  rotateInterval.value = undefined;
+}
+
+function easterEgg() {
+  switchHighlightColor();
+
+  startRotation();
+}
 </script>
 
 <template>
@@ -76,8 +132,10 @@ function formatLanguageText(inputLanguages?: string[]) {
       >
         <span
           class="text-[color:var(--highlight)] duration-300"
-          @focus="switchHighlightColor"
-          @mouseenter="switchHighlightColor"
+          @focus="easterEgg"
+          @focusout="stopRotation"
+          @mouseenter="easterEgg"
+          @mouseleave="stopRotation"
           >Hi,</span
         >
         I'm Mads
