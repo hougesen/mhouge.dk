@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <section v-if="metrics?.languages?.length" class="flex flex-col gap-8">
-    <SectionTitle> What am I up to? </SectionTitle>
+    <SectionTitle>What am I up to?</SectionTitle>
 
     <p class="text-xl text-black-primary dark:text-white-primary">
       This week I have been writing a lot of

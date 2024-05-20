@@ -1,6 +1,6 @@
 <template>
   <section id="contact" class="flex flex-col gap-2">
-    <SectionTitle> Wanna get in touch? </SectionTitle>
+    <SectionTitle>Wanna get in touch?</SectionTitle>
 
     <p class="text-xl text-black-primary dark:text-white-primary">
       I am always available for exciting discussions

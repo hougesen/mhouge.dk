@@ -68,7 +68,7 @@ function formatLanguageText(inputLanguages?: string[]) {
   return `Lately I have been writing a lot of ${formatted}.`;
 }
 
-const rotation = ref(15);
+const rotation = ref(0);
 
 const favicon = computed(() => {
   if (!rotation.value) {
