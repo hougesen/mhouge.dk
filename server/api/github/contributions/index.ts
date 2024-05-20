@@ -86,6 +86,12 @@ export default defineEventHandler(
         ) || []),
       );
 
+      if (
+        !response?.data?.user?.repositoriesContributedTo?.pageInfo?.hasNextPage
+      ) {
+        break;
+      }
+
       cursor =
         response?.data?.user?.repositoriesContributedTo?.pageInfo?.endCursor ||
         null;
