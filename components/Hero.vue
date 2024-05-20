@@ -77,7 +77,7 @@ const favicon = computed(() => {
 
   const v = rotation.value % 360;
 
-  const href = `/favicon${v === 0 ? '' : `-${v}`}.svg?asd=${(Math.random() + 1).toString(36).substring(7)}`;
+  const href = `/favicon${v === 0 ? '' : `-${v}`}.svg`;
 
   return [
     {
