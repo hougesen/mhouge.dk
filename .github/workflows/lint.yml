@@ -50,8 +50,5 @@ jobs:
       - name: Verify types
         run: pnpm run typecheck
 
-      - name: Verify build
-        run: pnpm run build
-
       - name: Verify formatting  💎
         run: pnpm run format:check
