@@ -1,10 +1,10 @@
 <script setup lang="ts">
 useHead({
-  title: 'Open Source contributions this year',
+  title: 'Open Source contributions',
 });
 
 useServerSeoMeta({
-  title: 'Open Source contributions this year',
+  title: 'Open Source contributions',
 });
 
 const { data: repositories } = useFetch('/api/github/contributions');
@@ -14,7 +14,7 @@ const { data: repositories } = useFetch('/api/github/contributions');
   <div>
     <Projects
       :projects="repositories ?? []"
-      title="Open Source contributions this year"
+      title="Open Source contributions"
     />
   </div>
 </template>
