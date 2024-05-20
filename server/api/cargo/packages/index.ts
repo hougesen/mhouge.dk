@@ -1,7 +1,7 @@
 import type { CargoPackage } from '~/cargo';
 
 type CargoResponse = {
-  crates: Array<CargoPackage>;
+  crates: Array<CargoPackage> | null;
   meta: {
     next_page: string | null;
     prev_page: null;
