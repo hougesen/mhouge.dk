@@ -23,25 +23,36 @@ jobs:
           node-version: ${{ matrix.node }}
           check-latest: true
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
       - name: Cache node_modules 📦
         uses: actions/cache@v4
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies 👨🏻‍💻
-        run: npm install
+        run: pnpm install
 
       - name: Verify lint 👀
-        run: npm run lint:fix
+        run: pnpm run lint:fix
 
       - name: Verify types
-        run: npm run typecheck
+        run: pnpm run typecheck
 
       - name: Verify build
-        run: npm run build
+        run: pnpm run build
 
       - name: Verify formatting  💎
-        run: npm run format:check
+        run: pnpm run format:check
