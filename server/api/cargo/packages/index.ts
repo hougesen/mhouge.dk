@@ -1,4 +1,4 @@
-import { CargoPackage } from '~/cargo';
+import type { CargoPackage } from '~/cargo';
 
 type CargoResponse = {
   crates: Array<CargoPackage>;
@@ -17,7 +17,7 @@ export default defineCachedEventHandler(
       'https://crates.io/api/v1/crates?page=1&per_page=10&sort=alpha&user_id=178342';
 
     do {
-      const response = await $fetch<CargoResponse>(url, {
+      const response: CargoResponse = await $fetch<CargoResponse>(url, {
         method: 'GET',
         headers: {
           'user-agent': 'MadsHougesen +http://mhouge.dk',

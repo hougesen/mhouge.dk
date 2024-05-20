@@ -12,6 +12,6 @@ const { data: crates } = useFetch('/api/cargo/packages');
 
 <template>
   <div>
-    <CargoCrates :crates="crates" />
+    <CargoCrates :crates="crates ?? []" />
   </div>
 </template>
