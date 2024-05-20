@@ -1,5 +1,9 @@
 <script setup lang="ts">
 const { data } = useFetch('/api/leetcode/stats');
+
+useHead({
+  title: 'Leetcode',
+});
 </script>
 
 <template>
