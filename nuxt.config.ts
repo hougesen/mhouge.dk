@@ -61,7 +61,15 @@ export default defineNuxtConfig({
     prerender: {
       autoSubfolderIndex: true,
       crawlLinks: true,
-      routes: ['/', '/sitemap.xml'],
+      routes: [
+        '/',
+        '/sitemap.xml',
+        '/leetcode',
+        '/contributed-to',
+        '/npm-packages',
+        '/rust-packages',
+        '/lazy',
+      ],
     },
   },
 
@@ -81,6 +89,7 @@ export default defineNuxtConfig({
 
   site: {
     url: 'https://mhouge.dk',
+    indexable: true,
   },
 
   sitemap: {
