@@ -72,7 +72,8 @@ export default defineNuxtConfig({
     stravaClientSecret: process?.env?.NUXT_STRAVA_CLIENT_SECRET ?? '',
     stravaRefreshToken: process?.env?.NUXT_STRAVA_REFRESH_TOKEN ?? '',
 
-    redisUrl: process?.env?.NUXT_REDIS_URL ?? '',
+    upstashRedisRestUrl: process?.env?.NUXT_UPSTASH_REDIS_REST_URL ?? '',
+    upstashRedisRestToken: process?.env?.NUXT_UPSTASH_REDIS_REST_TOKEN ?? '',
   },
 
   image: {

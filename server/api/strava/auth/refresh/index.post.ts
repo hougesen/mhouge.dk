@@ -1,14 +1,14 @@
-import { Redis } from 'ioredis';
+import { Redis } from '@upstash/redis';
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig(event);
 
-  const kvStore = new Redis(config.redisUrl);
-  if (!kvStore) {
-    throw new Error('Kv store is undefined');
-  }
+  const kvStore = new Redis({
+    url: config.upstashRedisRestUrl,
+    token: config.upstashRedisRestToken,
+  });
 
-  const refreshToken = await kvStore.get('strava_refresh_token');
+  const refreshToken = await kvStore.get<string>('strava:refresh_token');
   if (!refreshToken) {
     throw new Error('Refresh token is undefined');
   }
@@ -25,9 +25,10 @@ export default defineEventHandler(async (event) => {
     refresh_token: string;
   }>(url.href, { method: 'POST' });
 
-  await kvStore.set('strava_access_token', response.access_token);
-
-  await kvStore.set('strava_refresh_token', response.refresh_token);
+  await kvStore.mset({
+    'strava:access_token': response.access_token,
+    'strava:refresh_token': response.refresh_token,
+  });
 
   return {
     access_token: response.access_token,
