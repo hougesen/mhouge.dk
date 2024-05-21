@@ -17,7 +17,7 @@ useHead({
     <NotFound />
 
     <p class="mt-8 text-center">
-      {{ error?.message || error?.statusMessage || error }}
+      {{ error?.statusCode }}
     </p>
   </div>
 </template>

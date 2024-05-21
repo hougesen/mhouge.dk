@@ -106,7 +106,7 @@ const hardcoded: Project[] = [
   },
 ];
 
-export default defineEventHandler(
+export default defineCachedEventHandler(
   async (event) => {
     const config = useRuntimeConfig(event);
 
@@ -204,7 +204,7 @@ export default defineEventHandler(
 
     return projects;
   },
-  /* {
+  {
     maxAge: 14400,
-  }, */
+  },
 );
