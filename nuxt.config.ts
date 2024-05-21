@@ -68,6 +68,11 @@ export default defineNuxtConfig({
   runtimeConfig: {
     githubApiKey: process?.env?.NUXT_GITHUB_API_KEY ?? '',
     wakatimeApiKey: process?.env?.NUXT_WAKATIME_API_KEY ?? '',
+    stravaClientId: process?.env?.NUXT_STRAVA_CLIENT_ID ?? '',
+    stravaClientSecret: process?.env?.NUXT_STRAVA_CLIENT_SECRET ?? '',
+    stravaRefreshToken: process?.env?.NUXT_STRAVA_REFRESH_TOKEN ?? '',
+    // TODO: save in database
+    stravaBearerToken: process?.env?.NUXT_STRAVA_BEARER_TOKEN ?? '',
   },
 
   image: {
@@ -91,5 +96,11 @@ export default defineNuxtConfig({
     enabled: true,
     disallow: ['/api', '/404'],
     credits: false,
+  },
+
+  routeRules: {
+    '/': { prerender: true },
+
+    '/api/*': { prerender: false },
   },
 });
