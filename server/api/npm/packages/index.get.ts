@@ -1,4 +1,5 @@
 import { Redis } from '@upstash/redis/cloudflare';
+import { REDIS_CACHE_DURATION, REQUEST_CACHE_DURATION } from '~/caching';
 import type { NpmPackage } from '~/npm';
 
 type NpmResponse = {
@@ -49,7 +50,7 @@ export default defineCachedEventHandler(
 
     if (packages.length) {
       kvStore
-        .setex(cacheKey, 14400, JSON.stringify(packages))
+        .setex(cacheKey, REDIS_CACHE_DURATION, JSON.stringify(packages))
         .catch(() => undefined);
     }
 
@@ -58,6 +59,6 @@ export default defineCachedEventHandler(
     return packages;
   },
   {
-    maxAge: 14400,
+    maxAge: REQUEST_CACHE_DURATION,
   },
 );

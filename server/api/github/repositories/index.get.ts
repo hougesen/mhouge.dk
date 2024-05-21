@@ -1,4 +1,5 @@
 import { Redis } from '@upstash/redis/cloudflare';
+import { REDIS_CACHE_DURATION, REQUEST_CACHE_DURATION } from '~/caching';
 import type { Project } from '~/github';
 
 type GithubReposoryResponse = {
@@ -83,14 +84,16 @@ export default defineCachedEventHandler(
     );
 
     if (projects.length) {
-      setResponseHeader(event, 'x-redis-cache', 'miss');
-
       kvStore
-        .setex(cacheKey, 14400, JSON.stringify(projects))
+        .setex(cacheKey, REDIS_CACHE_DURATION, JSON.stringify(projects))
         .catch(() => undefined);
     }
 
+    setResponseHeader(event, 'x-redis-cache', 'miss');
+
     return projects;
   },
-  { maxAge: 14400 },
+  {
+    maxAge: REQUEST_CACHE_DURATION,
+  },
 );

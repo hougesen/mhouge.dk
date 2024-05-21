@@ -1,4 +1,5 @@
 import { Redis } from '@upstash/redis/cloudflare';
+import { REDIS_CACHE_DURATION, REQUEST_CACHE_DURATION } from '~/caching';
 import {
   type Sport,
   type SportActivity,
@@ -153,7 +154,9 @@ export default defineCachedEventHandler(
     }
 
     if (s?.length) {
-      kvStore.setex(cacheKey, 14400, JSON.stringify(s)).catch(() => undefined);
+      kvStore
+        .setex(cacheKey, REDIS_CACHE_DURATION, JSON.stringify(s))
+        .catch(() => undefined);
     }
 
     setResponseHeader(event, 'x-redis-cache', 'miss');
@@ -161,6 +164,6 @@ export default defineCachedEventHandler(
     return s;
   },
   {
-    maxAge: 14400,
+    maxAge: REQUEST_CACHE_DURATION,
   },
 );
