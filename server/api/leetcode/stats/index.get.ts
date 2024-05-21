@@ -1,3 +1,5 @@
+import { Redis } from '@upstash/redis/cloudflare';
+
 type LeetcodeResponse = {
   data: {
     matchedUser: {
@@ -15,9 +17,46 @@ type LeetcodeResponse = {
   };
 };
 
+type LeetcodeDifficuties = {
+  all: {
+    count: number;
+    submissions: number;
+  };
+  easy: {
+    count: number;
+    submissions: number;
+  };
+  medium: {
+    count: number;
+    submissions: number;
+  };
+  hard: {
+    count: number;
+    submissions: number;
+  };
+};
+
 export default defineCachedEventHandler(
-  async (_event) => {
-    const difficulties = {
+  async (event): Promise<LeetcodeDifficuties> => {
+    const config = useRuntimeConfig(event);
+
+    const kvStore = new Redis({
+      url: config.upstashRedisRestUrl,
+      token: config.upstashRedisRestToken,
+    });
+
+    const cacheKey = 'leetcode:stats';
+
+    const cached = await kvStore.get<string>(cacheKey).catch(() => undefined);
+
+    if (cached) {
+      setResponseHeader(event, 'content-type', 'application/json');
+      setResponseHeader(event, 'x-redis-cache', 'hit');
+
+      return cached as unknown as LeetcodeDifficuties;
+    }
+
+    const difficulties: LeetcodeDifficuties = {
       all: { count: 0, submissions: 0 },
       easy: { count: 0, submissions: 0 },
       medium: { count: 0, submissions: 0 },
@@ -67,6 +106,14 @@ export default defineCachedEventHandler(
           break;
       }
     }
+
+    if (difficulties?.all?.count) {
+      kvStore
+        .setex(cacheKey, 14400, JSON.stringify(difficulties))
+        .catch(() => undefined);
+    }
+
+    setResponseHeader(event, 'x-redis-cache', 'miss');
 
     return difficulties;
   },

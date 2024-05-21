@@ -1,3 +1,4 @@
+import { Redis } from '@upstash/redis/cloudflare';
 import type { NpmPackage } from '~/npm';
 
 type NpmResponse = {
@@ -7,7 +8,25 @@ type NpmResponse = {
 };
 
 export default defineCachedEventHandler(
-  async (_event) => {
+  async (event): Promise<NpmPackage[]> => {
+    const config = useRuntimeConfig(event);
+
+    const kvStore = new Redis({
+      url: config.upstashRedisRestUrl,
+      token: config.upstashRedisRestToken,
+    });
+
+    const cacheKey = 'npm:packages';
+
+    const cached = await kvStore.get<string>(cacheKey).catch(() => undefined);
+
+    if (cached) {
+      setResponseHeader(event, 'content-type', 'application/json');
+      setResponseHeader(event, 'x-redis-cache', 'hit');
+
+      return cached as unknown as NpmPackage[];
+    }
+
     const packages: NpmPackage[] = [];
 
     const url =
@@ -27,6 +46,14 @@ export default defineCachedEventHandler(
         ),
       );
     }
+
+    if (packages.length) {
+      kvStore
+        .setex(cacheKey, 14400, JSON.stringify(packages))
+        .catch(() => undefined);
+    }
+
+    setResponseHeader(event, 'x-redis-cache', 'miss');
 
     return packages;
   },
