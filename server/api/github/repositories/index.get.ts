@@ -1,3 +1,4 @@
+import { Redis } from '@upstash/redis/cloudflare';
 import type { Project } from '~/github';
 
 type GithubReposoryResponse = {
@@ -19,6 +20,22 @@ type GithubReposoryResponse = {
 export default defineCachedEventHandler(
   async (event): Promise<Project[]> => {
     const config = useRuntimeConfig(event);
+
+    const kvStore = new Redis({
+      url: config.upstashRedisRestUrl,
+      token: config.upstashRedisRestToken,
+    });
+
+    const cacheKey = 'github:repositories';
+
+    const cached = await kvStore.get<string>(cacheKey).catch(() => undefined);
+
+    if (cached) {
+      setResponseHeader(event, 'content-type', 'application/json');
+      setResponseHeader(event, 'x-redis-cache', 'hit');
+
+      return cached as unknown as Project[];
+    }
 
     const response = await $fetch<GithubReposoryResponse>(
       'https://api.github.com/graphql',
@@ -58,10 +75,22 @@ export default defineCachedEventHandler(
       },
     );
 
-    return (response?.data?.user?.pinnedItems?.nodes ?? []).map((p) => ({
-      ...p,
-      languages: p?.languages?.nodes ?? [],
-    }));
+    const projects = (response?.data?.user?.pinnedItems?.nodes ?? []).map(
+      (p) => ({
+        ...p,
+        languages: p?.languages?.nodes ?? [],
+      }),
+    );
+
+    if (projects.length) {
+      setResponseHeader(event, 'x-redis-cache', 'miss');
+
+      kvStore
+        .setex(cacheKey, 14400, JSON.stringify(projects))
+        .catch(() => undefined);
+    }
+
+    return projects;
   },
   { maxAge: 14400 },
 );

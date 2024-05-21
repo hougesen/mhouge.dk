@@ -1,3 +1,4 @@
+import { Redis } from '@upstash/redis/cloudflare';
 import type { Project } from '~/github';
 
 type GithubContributedToResponse = {
@@ -107,8 +108,24 @@ const hardcoded: Project[] = [
 ];
 
 export default defineCachedEventHandler(
-  async (event) => {
+  async (event): Promise<Project[]> => {
     const config = useRuntimeConfig(event);
+
+    const kvStore = new Redis({
+      url: config.upstashRedisRestUrl,
+      token: config.upstashRedisRestToken,
+    });
+
+    const cacheKey = 'github:contributions';
+
+    const cached = await kvStore.get<string>(cacheKey).catch(() => undefined);
+
+    if (cached) {
+      setResponseHeader(event, 'content-type', 'application/json');
+      setResponseHeader(event, 'x-redis-cache', 'hit');
+
+      return cached as unknown as Project[];
+    }
 
     const projects: Project[] = [];
 
@@ -201,6 +218,14 @@ export default defineCachedEventHandler(
         seenProjects.add(name);
       }
     }
+
+    if (projects?.length) {
+      kvStore
+        .setex(cacheKey, 14400, JSON.stringify(projects))
+        .catch(() => undefined);
+    }
+
+    setResponseHeader(event, 'x-redis-cache', 'miss');
 
     return projects;
   },

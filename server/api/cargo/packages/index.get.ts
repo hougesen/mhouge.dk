@@ -1,3 +1,4 @@
+import { Redis } from '@upstash/redis/cloudflare';
 import type { CargoPackage } from '~/cargo';
 
 type CargoResponse = {
@@ -10,7 +11,25 @@ type CargoResponse = {
 };
 
 export default defineCachedEventHandler(
-  async (_event) => {
+  async (event): Promise<CargoPackage[]> => {
+    const config = useRuntimeConfig(event);
+
+    const kvStore = new Redis({
+      url: config.upstashRedisRestUrl,
+      token: config.upstashRedisRestToken,
+    });
+
+    const cacheKey = 'cargo:packages';
+
+    const cached = await kvStore.get<string>(cacheKey).catch(() => undefined);
+
+    if (cached) {
+      setResponseHeader(event, 'content-type', 'application/json');
+      setResponseHeader(event, 'x-redis-cache', 'hit');
+
+      return cached as unknown as CargoPackage[];
+    }
+
     const packages: CargoPackage[] = [];
 
     let url: string | null =
@@ -32,6 +51,14 @@ export default defineCachedEventHandler(
     } while (url);
 
     packages.sort((a, b) => b.downloads - a.downloads);
+
+    if (packages?.length) {
+      kvStore
+        .setex(cacheKey, 14400, JSON.stringify(packages))
+        .catch(() => undefined);
+    }
+
+    setResponseHeader(event, 'x-redis-cache', 'miss');
 
     return packages;
   },

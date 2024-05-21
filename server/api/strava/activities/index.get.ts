@@ -1,3 +1,4 @@
+import { Redis } from '@upstash/redis/cloudflare';
 import {
   type Sport,
   type SportActivity,
@@ -6,7 +7,25 @@ import {
 } from '~/strava';
 
 export default defineCachedEventHandler(
-  async (_event) => {
+  async (event): Promise<Sport[]> => {
+    const config = useRuntimeConfig(event);
+
+    const kvStore = new Redis({
+      url: config.upstashRedisRestUrl,
+      token: config.upstashRedisRestToken,
+    });
+
+    const cacheKey = 'strava:activites';
+
+    const cached = await kvStore.get<string>(cacheKey).catch(() => undefined);
+
+    if (cached) {
+      setResponseHeader(event, 'content-type', 'application/json');
+      setResponseHeader(event, 'x-redis-cache', 'hit');
+
+      return cached as unknown as Sport[];
+    }
+
     const { access_token: accessToken } = await $fetch(
       '/api/strava/auth/refresh',
       {
@@ -133,8 +152,15 @@ export default defineCachedEventHandler(
       k.activities.sort((a, b) => a.date.getTime() - b.date.getTime());
     }
 
+    if (s?.length) {
+      kvStore.setex(cacheKey, 14400, JSON.stringify(s)).catch(() => undefined);
+    }
+
+    setResponseHeader(event, 'x-redis-cache', 'miss');
+
     return s;
   },
-
-  { maxAge: 14400 },
+  {
+    maxAge: 14400,
+  },
 );
