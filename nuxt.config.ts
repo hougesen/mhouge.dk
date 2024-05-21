@@ -6,7 +6,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/sitemap',
     'nuxt-simple-robots',
-    'nitro-cloudflare-dev',
   ],
 
   postcss: {
@@ -72,6 +71,8 @@ export default defineNuxtConfig({
     stravaClientId: process?.env?.NUXT_STRAVA_CLIENT_ID ?? '',
     stravaClientSecret: process?.env?.NUXT_STRAVA_CLIENT_SECRET ?? '',
     stravaRefreshToken: process?.env?.NUXT_STRAVA_REFRESH_TOKEN ?? '',
+
+    redisUrl: process?.env?.NUXT_REDIS_URL ?? '',
   },
 
   image: {
@@ -99,7 +100,6 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/': { prerender: true },
-
     '/api/*': { prerender: false },
   },
 });

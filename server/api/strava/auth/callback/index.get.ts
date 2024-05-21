@@ -1,3 +1,5 @@
+import { Redis } from 'ioredis';
+
 type StravaAuthResponse = {
   access_token: string;
   athlete: {
@@ -51,11 +53,11 @@ export default defineEventHandler(async (event) => {
   });
 
   if (response?.athlete?.id === 48254750) {
-    const kvStore = event?.context?.cloudflare?.env?.KV_STORE;
+    const kvStore = new Redis(config.redisUrl);
 
     if (kvStore) {
-      await kvStore.put('strava_access_token', response.access_token);
-      await kvStore.put('strava_refresh_token', response.refresh_token);
+      await kvStore.set('strava_access_token', response.access_token);
+      await kvStore.set('strava_refresh_token', response.refresh_token);
     }
   }
 

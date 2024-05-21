@@ -1,7 +1,9 @@
+import { Redis } from 'ioredis';
+
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig(event);
 
-  const kvStore = event?.context?.cloudflare?.env?.KV_STORE;
+  const kvStore = new Redis(config.redisUrl);
   if (!kvStore) {
     throw new Error('Kv store is undefined');
   }
@@ -23,9 +25,9 @@ export default defineEventHandler(async (event) => {
     refresh_token: string;
   }>(url.href, { method: 'POST' });
 
-  await kvStore.put('strava_access_token', response.access_token);
+  await kvStore.set('strava_access_token', response.access_token);
 
-  await kvStore.put('strava_refresh_token', response.refresh_token);
+  await kvStore.set('strava_refresh_token', response.refresh_token);
 
   return {
     access_token: response.access_token,
