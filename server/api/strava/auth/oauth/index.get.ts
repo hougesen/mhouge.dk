@@ -7,7 +7,7 @@ export default defineEventHandler((event) => {
 
   url.searchParams.set(
     'redirect_uri',
-    'http://localhost:3000/api/strava/auth/callback',
+    'https://mhouge.dk/api/strava/auth/callback',
   );
 
   url.searchParams.set('response_type', 'code');
