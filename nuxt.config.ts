@@ -61,15 +61,7 @@ export default defineNuxtConfig({
     prerender: {
       autoSubfolderIndex: true,
       crawlLinks: true,
-      routes: [
-        '/',
-        '/sitemap.xml',
-        '/leetcode',
-        '/contributed-to',
-        '/npm-packages',
-        '/rust-packages',
-        '/lazy',
-      ],
+      routes: ['/', '/sitemap.xml'],
     },
   },
 
