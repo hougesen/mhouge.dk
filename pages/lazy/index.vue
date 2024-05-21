@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { secondsToHHMMSS } from '~/strava';
 
+useHead({
+  title: 'Has Mads been lazy this week?',
+});
+
 const { data: sports } = useFetch('/api/strava/activities');
 
 const totalMinutes = computed(() => {
