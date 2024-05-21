@@ -1,4 +1,5 @@
 import { Redis } from '@upstash/redis/cloudflare';
+import { REDIS_CACHE_DURATION, REQUEST_CACHE_DURATION } from '~/caching';
 
 type LeetcodeResponse = {
   data: {
@@ -107,9 +108,9 @@ export default defineCachedEventHandler(
       }
     }
 
-    if (difficulties?.all?.count) {
+    if (response?.data?.matchedUser?.submitStats?.acSubmissionNum?.length) {
       kvStore
-        .setex(cacheKey, 14400, JSON.stringify(difficulties))
+        .setex(cacheKey, REDIS_CACHE_DURATION, JSON.stringify(difficulties))
         .catch(() => undefined);
     }
 
@@ -118,6 +119,6 @@ export default defineCachedEventHandler(
     return difficulties;
   },
   {
-    maxAge: 14400,
+    maxAge: REQUEST_CACHE_DURATION,
   },
 );

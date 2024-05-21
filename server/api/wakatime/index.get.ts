@@ -1,4 +1,5 @@
 import { Redis } from '@upstash/redis/cloudflare';
+import { REDIS_CACHE_DURATION, REQUEST_CACHE_DURATION } from '~/caching';
 import type { WakatimeStatResponse } from '~/wakatime';
 
 export default defineCachedEventHandler(
@@ -36,7 +37,7 @@ export default defineCachedEventHandler(
 
     if (stats) {
       kvStore
-        .setex(cacheKey, 14400, JSON.stringify(stats))
+        .setex(cacheKey, REDIS_CACHE_DURATION, JSON.stringify(stats))
         .catch(() => undefined);
     }
 
@@ -44,5 +45,7 @@ export default defineCachedEventHandler(
 
     return stats;
   },
-  { maxAge: 14400 },
+  {
+    maxAge: REQUEST_CACHE_DURATION,
+  },
 );
