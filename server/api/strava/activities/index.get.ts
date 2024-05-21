@@ -5,8 +5,13 @@ import {
   pascalCaseToSpaces,
 } from '~/strava';
 
-export default defineEventHandler(async (event) => {
-  const config = useRuntimeConfig(event);
+export default defineEventHandler(async (_event) => {
+  const { access_token: accessToken } = await $fetch(
+    '/api/strava/auth/refresh',
+    {
+      method: 'POST',
+    },
+  );
 
   const sports: Record<string, Sport> = {};
 
@@ -32,7 +37,7 @@ export default defineEventHandler(async (event) => {
     const r = await $fetch<StravaActivity[]>(url.href, {
       method: 'GET',
       headers: {
-        Authorization: `Bearer ${config.stravaBearerToken}`,
+        Authorization: `Bearer ${accessToken}`,
       },
     });
 

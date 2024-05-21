@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/sitemap',
     'nuxt-simple-robots',
+    'nitro-cloudflare-dev',
   ],
 
   postcss: {
@@ -71,8 +72,6 @@ export default defineNuxtConfig({
     stravaClientId: process?.env?.NUXT_STRAVA_CLIENT_ID ?? '',
     stravaClientSecret: process?.env?.NUXT_STRAVA_CLIENT_SECRET ?? '',
     stravaRefreshToken: process?.env?.NUXT_STRAVA_REFRESH_TOKEN ?? '',
-    // TODO: save in database
-    stravaBearerToken: process?.env?.NUXT_STRAVA_BEARER_TOKEN ?? '',
   },
 
   image: {
@@ -94,7 +93,7 @@ export default defineNuxtConfig({
 
   robots: {
     enabled: true,
-    disallow: ['/api', '/404'],
+    disallow: ['/api', '/api/*', '/404'],
     credits: false,
   },
 
