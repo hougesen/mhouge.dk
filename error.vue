@@ -1,4 +1,10 @@
 <script setup lang="ts">
+import type { NuxtError } from '#app';
+
+defineProps<{
+  error: NuxtError;
+}>();
+
 useHead({
   meta: [{ name: 'robots', content: 'noindex' }],
 });
@@ -9,5 +15,9 @@ useHead({
     <Navigation />
 
     <NotFound />
+
+    <p class="mt-8 text-center">
+      {{ error?.message || error?.statusMessage || error }}
+    </p>
   </div>
 </template>
