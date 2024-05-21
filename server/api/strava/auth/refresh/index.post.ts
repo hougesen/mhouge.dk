@@ -1,4 +1,4 @@
-import { Redis } from '@upstash/redis';
+import { Redis } from '@upstash/redis/cloudflare';
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig(event);
