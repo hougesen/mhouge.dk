@@ -39,8 +39,8 @@
     "@tailwindcss/typography": "^0.5.13",
     "@types/eslint": "~8.56.10",
     "@types/eslint-config-prettier": "~6.11.3",
-    "@typescript-eslint/eslint-plugin": "^7.9.0",
-    "@typescript-eslint/parser": "^7.9.0",
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
@@ -58,7 +58,8 @@
   },
   "dependencies": {
     "@nuxt/content": "^2.12.1",
-    "@nuxt/image": "^1.7.0"
+    "@nuxt/image": "^1.7.0",
+    "ioredis": "^5.4.1"
   },
   "packageManager": "pnpm@9.1.1+sha512.14e915759c11f77eac07faba4d019c193ec8637229e62ec99eefb7cf3c3b75c64447882b7c485142451ee3a6b408059cdfb7b7fa0341b975f12d0f7629c71195"
 }
