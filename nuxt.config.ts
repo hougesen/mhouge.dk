@@ -92,6 +92,7 @@ export default defineNuxtConfig({
 
   image: {
     domains: ['mhouge.dk'],
+    provider: 'ipxStatic',
   },
 
   site: {
