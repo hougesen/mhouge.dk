@@ -75,6 +75,7 @@ export default defineNuxtConfig({
         '/rust-packages',
       ],
     },
+    minify: true,
   },
 
   runtimeConfig: {
@@ -107,7 +108,11 @@ export default defineNuxtConfig({
     credits: false,
   },
 
-  content: {},
+  content: {
+    experimental: {
+      cacheContents: true,
+    },
+  },
 
   robots: {
     enabled: true,
@@ -124,5 +129,8 @@ export default defineNuxtConfig({
   experimental: {
     writeEarlyHints: true,
     sharedPrerenderData: true,
+    payloadExtraction: true,
   },
+
+  telemetry: false,
 });
