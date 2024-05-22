@@ -1,6 +1,8 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  ssr: true,
+
   modules: [
     '@nuxt/image',
     '@nuxt/content',
@@ -61,13 +63,25 @@ export default defineNuxtConfig({
     prerender: {
       autoSubfolderIndex: true,
       crawlLinks: true,
-      routes: ['/', '/sitemap.xml'],
+      routes: [
+        '/',
+        '/sitemap.xml',
+
+        '/blog/choosing-a-tech-stack-as-a-junior-developer',
+        '/blog/undergraduate-thesis',
+        '/lazy',
+        '/leetcode',
+        '/npm-packages',
+        '/rust-packages',
+      ],
     },
   },
 
   runtimeConfig: {
     githubApiKey: process?.env?.NUXT_GITHUB_API_KEY ?? '',
+
     wakatimeApiKey: process?.env?.NUXT_WAKATIME_API_KEY ?? '',
+
     stravaClientId: process?.env?.NUXT_STRAVA_CLIENT_ID ?? '',
     stravaClientSecret: process?.env?.NUXT_STRAVA_CLIENT_SECRET ?? '',
     stravaRefreshToken: process?.env?.NUXT_STRAVA_REFRESH_TOKEN ?? '',
@@ -102,6 +116,12 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/': { prerender: true },
+    '/blog/*': { prerender: true },
     '/api/*': { prerender: false },
+  },
+
+  experimental: {
+    writeEarlyHints: true,
+    sharedPrerenderData: true,
   },
 });
