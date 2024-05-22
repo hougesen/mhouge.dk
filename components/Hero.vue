@@ -200,7 +200,7 @@ function easterEgg() {
     <NuxtPicture
       alt="Image of Mads Hougesen"
       class="order-first mx-auto w-9/12 lg:order-1 lg:mr-0 lg:w-fit lg:text-right"
-      format="avif,webp"
+      format="webp,avif"
       :img-attrs="{ class: 'mr-auto lg:mr-0 ml-auto lg:text-right' }"
       src="/mads-hougesen-image.png"
     />
