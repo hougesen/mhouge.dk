@@ -1,24 +1,4 @@
 export default defineNuxtConfig({
-  devtools: { enabled: true },
-
-  ssr: true,
-
-  modules: [
-    '@nuxt/image',
-    '@nuxt/content',
-    '@nuxtjs/sitemap',
-    'nuxt-simple-robots',
-  ],
-
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
-
-  css: ['~/assets/css/main.css'],
-
   app: {
     head: {
       htmlAttrs: {
@@ -26,88 +6,56 @@ export default defineNuxtConfig({
       },
       link: [
         {
+          href: '/apple-touch-icon.png',
           rel: 'apple-touch-icon',
           sizes: '180x180',
-          href: '/apple-touch-icon.png',
         },
         {
-          rel: 'icon',
-          type: 'image/png',
-          sizes: '32x32',
           href: '/favicon-32x32.png',
-        },
-        {
           rel: 'icon',
+          sizes: '32x32',
           type: 'image/png',
-          sizes: '16x16',
+        },
+        {
           href: '/favicon-16x16.png',
+          rel: 'icon',
+          sizes: '16x16',
+          type: 'image/png',
         },
-        { rel: 'manifest', href: '/site.webmanifest' },
-        { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#5bbad5' },
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         {
+          href: '/site.webmanifest',
+          rel: 'manifest',
+        },
+        {
+          color: '#5bbad5',
+          href: '/safari-pinned-tab.svg',
+          rel: 'mask-icon',
+        },
+        {
+          href: 'https://fonts.googleapis.com',
           rel: 'preconnect',
-          href: 'https://fonts.gstatic.com',
-          crossorigin: '',
         },
         {
-          rel: 'stylesheet',
+          crossorigin: '',
+          href: 'https://fonts.gstatic.com',
+          rel: 'preconnect',
+        },
+        {
           href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
+          rel: 'stylesheet',
         },
       ],
       meta: [
-        { name: 'msapplication-TileColor', content: '#da532c' },
-        { name: 'theme-color', content: '#ffffff' },
+        {
+          content: '#da532c',
+          name: 'msapplication-TileColor',
+        },
+        {
+          content: '#ffffff',
+          name: 'theme-color',
+        },
       ],
     },
-  },
-
-  nitro: {
-    prerender: {
-      crawlLinks: true,
-      routes: [
-        '/',
-        '/sitemap.xml',
-
-        '/blog/choosing-a-tech-stack-as-a-junior-developer',
-        '/blog/undergraduate-thesis',
-        '/lazy',
-        '/leetcode',
-        '/npm-packages',
-        '/rust-packages',
-      ],
-    },
-    minify: true,
-  },
-
-  runtimeConfig: {
-    githubApiKey: process?.env?.NUXT_GITHUB_API_KEY ?? '',
-
-    wakatimeApiKey: process?.env?.NUXT_WAKATIME_API_KEY ?? '',
-
-    stravaClientId: process?.env?.NUXT_STRAVA_CLIENT_ID ?? '',
-    stravaClientSecret: process?.env?.NUXT_STRAVA_CLIENT_SECRET ?? '',
-    stravaRefreshToken: process?.env?.NUXT_STRAVA_REFRESH_TOKEN ?? '',
-
-    upstashRedisRestUrl: process?.env?.NUXT_UPSTASH_REDIS_REST_URL ?? '',
-    upstashRedisRestToken: process?.env?.NUXT_UPSTASH_REDIS_REST_TOKEN ?? '',
-  },
-
-  image: {
-    domains: ['mhouge.dk'],
-    provider: 'ipxStatic',
-  },
-
-  site: {
-    url: 'https://mhouge.dk',
-    indexable: true,
-  },
-
-  sitemap: {
-    enabled: true,
-    cacheMaxAgeSeconds: 3600,
-    discoverImages: true,
-    credits: false,
   },
 
   content: {
@@ -116,23 +64,94 @@ export default defineNuxtConfig({
     },
   },
 
-  robots: {
-    enabled: true,
-    disallow: ['/api', '/api/*', '/404'],
-    credits: false,
-  },
+  css: ['~/assets/css/main.css'],
 
-  routeRules: {
-    '/': { prerender: true },
-    '/blog/*': { prerender: true },
-    '/api/*': { prerender: false },
+  devtools: {
+    enabled: true,
   },
 
   experimental: {
-    writeEarlyHints: true,
-    sharedPrerenderData: true,
     payloadExtraction: true,
+    sharedPrerenderData: true,
+    writeEarlyHints: true,
   },
+
+  image: {
+    domains: ['mhouge.dk'],
+    provider: 'ipxStatic',
+  },
+
+  modules: [
+    '@nuxt/image',
+    '@nuxt/content',
+    '@nuxtjs/sitemap',
+    'nuxt-simple-robots',
+  ],
+
+  nitro: {
+    minify: true,
+    prerender: {
+      crawlLinks: true,
+      routes: [
+        '/',
+        '/sitemap.xml',
+        '/blog/choosing-a-tech-stack-as-a-junior-developer',
+        '/blog/undergraduate-thesis',
+        '/lazy',
+        '/leetcode',
+        '/npm-packages',
+        '/rust-packages',
+      ],
+    },
+  },
+  postcss: {
+    plugins: {
+      autoprefixer: {},
+      tailwindcss: {},
+    },
+  },
+
+  robots: {
+    credits: false,
+    disallow: ['/api', '/api/*', '/404'],
+    enabled: true,
+  },
+
+  routeRules: {
+    '/': {
+      prerender: true,
+    },
+    '/api/*': {
+      prerender: false,
+    },
+    '/blog/*': {
+      prerender: true,
+    },
+  },
+
+  runtimeConfig: {
+    githubApiKey: process?.env?.NUXT_GITHUB_API_KEY,
+    stravaClientId: process?.env?.NUXT_STRAVA_CLIENT_ID,
+    stravaClientSecret: process?.env?.NUXT_STRAVA_CLIENT_SECRET,
+    stravaRefreshToken: process?.env?.NUXT_STRAVA_REFRESH_TOKEN,
+    upstashRedisRestToken: process?.env?.NUXT_UPSTASH_REDIS_REST_TOKEN,
+    upstashRedisRestUrl: process?.env?.NUXT_UPSTASH_REDIS_REST_URL,
+    wakatimeApiKey: process?.env?.NUXT_WAKATIME_API_KEY,
+  },
+
+  site: {
+    indexable: true,
+    url: 'https://mhouge.dk',
+  },
+
+  sitemap: {
+    cacheMaxAgeSeconds: 3600,
+    credits: false,
+    discoverImages: true,
+    enabled: true,
+  },
+
+  ssr: true,
 
   telemetry: false,
 });
