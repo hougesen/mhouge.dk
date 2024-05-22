@@ -64,7 +64,6 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      autoSubfolderIndex: true,
       crawlLinks: true,
       routes: [
         '/',
