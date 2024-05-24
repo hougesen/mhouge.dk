@@ -16,7 +16,7 @@ export default defineCachedEventHandler(
       token: config.upstashRedisRestToken,
     });
 
-    const cacheKey = 'strava:activites';
+    const cacheKey = 'strava:activities';
 
     const cached = await kvStore.get<string>(cacheKey).catch(() => undefined);
 
