@@ -120,6 +120,7 @@ Begge sprog har deres fordele og ulemper, og der er ikke et decideret bedste spr
 Rust har i modsætning til Go, ikke en indbygget garbage collector. I stedet bruges der en række regler bygget op omkring ejerskab, scope, samt levetid på allokeringer. Disse regler gør det muligt allerede ved kompilering af programmer, at udregne hvornår enhver allokering bør de-allokeres[^fn@rust_what_nodate]. Ved at undgå at bruge en garbage collector kan Rust potentielt opnå en bedre ydeevne, fordi der ikke behøves at blive brugt ressourcer på at gennemgå allokeringerne. Garbage collection er en process som i visse tilfælde kan resultere i en øget reaktionstid på et program, da de fleste garbage collectore er nød til kortvarigt at pause programmet[^fn@howarth_why_2020].
 
 [^fn@rust_what_nodate]: [Rust \(2022). What is Ownership? - The Rust Programming Language](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html)
+
 [^fn@howarth_why_2020]: [Howarth, J. (2020). Why Discord is switching from Go to Rust](https://discord.com/blog/why-discord-is-switching-from-go-to-rust)
 
 Når det er sagt, vil valget mellem Go og Rust realistisk set ikke have en mærkbar forskel for et system af denne størrelse. At Rust bruger mindre hukommelse betyder dog at antallet af kanaler hvert enkelt node kan overvåge er højere, hvilket selvfølgelig er en fordel.
@@ -152,8 +153,11 @@ Eftersom at begge løsninger i sidste ender bruger IRC, gør det fra et teknisk 
 Den største faktor i valget mellem de to ligger i udbredelsen af protokollerne. WebSockets er understøtte af de fleste moderne browsere[^fn@caniuse_websockets], hvilket har resulteret i at protokollen bliver brugt til mange systemer der kræver to vejs kommunikation mellem klient og server[^fn@murley_websocket_2021]. IRC derimod bliver kun brugt til chat servere, dette giver WebSockets en klar fordel eftersom det er nemmere at finde dokumentation. Denne forskel i brug er tydelig når der sammenlignes mellem antallet af downloads af irc[^fn@cratesio_irc_nodate], det mest populære irc bibliotek til Rust, og Tungstenite[^fn@cratesio_tungstenite_nodate], det mest populære WebSocket bibliotek. Tungstenite har på nuværende tidspunkt over 150 gange så mange downloads som irc. Tungstenite indeholder dog både en klient, og server implementation, hvilket påvirker antallet af downloads.
 
 [^fn@caniuse_websockets]: [Caniuse \(2023). WebSocket API](https://caniuse.com/mdn-api_websocket)
+
 [^fn@murley_websocket_2021]: [Murley et al., (2021). WebSocket Adoption and the Landscape of the Real-Time Web](https://dl.acm.org/doi/10.1145/3442381.3450063)
+
 [^fn@cratesio_irc_nodate]: [crates.io \(2023). irc - crates.io: Rust Package Registry](https://crates.io/crates/irc)
+
 [^fn@cratesio_tungstenite_nodate]: [crates.io \(2023). tungstenite - crates.io: Rust Package Registry](https://crates.io/crates/tungstenite)
 
 ### Gemning af chatbeskeder
@@ -240,7 +244,9 @@ Tekst analyse og computer vision bør i dette tilfælde ikke ses som direkte kon
 Den største fordel ved at bruge tekstanalyse frem for computer vision ligger dog i mængde af ressourcer det kræver. Computer vision er ofte så ressourcekrævende at den bedste løsning er at køre det på dedikerede grafikkort, derfor kan det være utrolig dyrt at skalere[^fn@fung_chapter_nodate]. Simpel tekst analyse er dog generelt en del simplere rent beregningsmæssigt, eftersom det ikke er nødvendigt at bearbejde store mediefiler. Når det er sagt er det yderst afhængig af hvilken arkitektur modellen er baseret på, samt formålet med modellen, for eksempel findes der en lang række computer vision modeller der er målrettet IoT og embeddede enheder. Disse modeller er per automatik nød til at bruge en lav mængde ressourcer på grund af begrænsningerne[^fn@roth2022resourceefficient]. Avancerede modeller vil altid være mere krævende, uafhængigt af modeltype. OpenAIs GPT-3.5 baserede chatbot ChatGPT er anslået til kræve som minimum fem Nvidia A100 GPUer blot for at loade modellen[^fn@goldstein_2022_twitter].
 
 [^fn@fung_chapter_nodate]: [James Fung (2022). Computer Vision on the GPU](https://developer.nvidia.com/gpugems/gpugems2/part-v-image-oriented-computing/chapter-40-computer-vision-gpu)
+
 [^fn@roth2022resourceefficient]: [Roth et al. (2022). Resource-Efficient Neural Networks for Embedded Systems](https://arxiv.org/abs/2001.03048)
+
 [^fn@goldstein_2022_twitter]: [Tom Goldstein (2022). How many GPUs does it take to run ChatGPT](https://twitter.com/tomgoldsteincs/status/1600196981955100694)
 
 Den bedste løsning ville være at lave en kombination af begge systemer. Dette vil gøre det muligt at få den bredeste type af højdepunkter, samtidig ville højdepunkterne der bliver fundet gennem computer vision kunne bruges til at forbedre chat analysen.
