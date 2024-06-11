@@ -70,6 +70,16 @@ export default defineNuxtConfig({
     enabled: true,
   },
 
+  eslint: {
+    checker: true,
+    config: {
+      stylistic: false,
+      typescript: {
+        strict: true,
+      },
+    },
+  },
+
   experimental: {
     payloadExtraction: true,
     sharedPrerenderData: true,
@@ -86,6 +96,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/sitemap',
     'nuxt-simple-robots',
+    '@nuxt/eslint',
   ],
 
   nitro: {
