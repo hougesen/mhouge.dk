@@ -1,5 +1,5 @@
 format:
-    pnpm dlx @biomejs/biome check --apply .
+    pnpm dlx @biomejs/biome check --write .
     pnpm run lint:fix
     mdsf format .
     pnpm run format
