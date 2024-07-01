@@ -40,7 +40,7 @@
     "@nuxtjs/sitemap": "^5.2.0",
     "@tailwindcss/typography": "^0.5.13",
     "autoprefixer": "^10.4.19",
-    "eslint-plugin-tailwindcss": "^3.17.3",
+    "eslint-plugin-tailwindcss": "^3.17.4",
     "eslint-plugin-vuejs-accessibility": "^2.3.0",
     "nuxt": "^3.12.2",
     "nuxt-simple-robots": "4.0.0-rc.17",
