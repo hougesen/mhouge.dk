@@ -95,7 +95,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/content',
     '@nuxtjs/sitemap',
-    'nuxt-simple-robots',
+    '@nuxtjs/robots',
     '@nuxt/eslint',
   ],
 
