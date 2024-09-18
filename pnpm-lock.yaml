@@ -61,8 +61,8 @@ importers:
         specifier: ^3.5.6
         version: 3.5.6(typescript@5.5.3)
       vue-router:
-        specifier: ^4.4.2
-        version: 4.4.2(vue@3.5.6(typescript@5.5.3))
+        specifier: ^4.4.5
+        version: 4.4.5(vue@3.5.6(typescript@5.5.3))
 
 packages:
 
@@ -1507,8 +1507,8 @@ packages:
   '@vue/compiler-ssr@3.5.6':
     resolution: {integrity: sha512-VpWbaZrEOCqnmqjE83xdwegtr5qO/2OPUC6veWgvNqTJ3bYysz6vY3VqMuOijubuUYPRpG3OOKIh9TD0Stxb9A==}
 
-  '@vue/devtools-api@6.6.3':
-    resolution: {integrity: sha512-0MiMsFma/HqA6g3KLKn+AGpL1kgKhFWszC9U29NfpWK5LE7bjeXxySWJrOJ77hBz+TBrBQ7o4QJqbPbqbs8rJw==}
+  '@vue/devtools-api@6.6.4':
+    resolution: {integrity: sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==}
 
   '@vue/devtools-core@7.3.3':
     resolution: {integrity: sha512-i6Bwkx4OwfY0QVHjAdsivhlzZ2HMj7fbNRYJsWspQ+dkA1f3nTzycPqZmVUsm2TGkbQlhTMhCAdDoP97JKoc+g==}
@@ -4728,13 +4728,8 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
-  vue-router@4.4.2:
-    resolution: {integrity: sha512-1qNybkn2L7QsLzaXs8nvlQmRKp8XF8DCxZys/Jr1JpQcHsKUxTKzTxCVA1G7NfBfwRIBgCJPoujOG5lHCCNUxw==}
-    peerDependencies:
-      vue: ^3.2.0
-
-  vue-router@4.4.3:
-    resolution: {integrity: sha512-sv6wmNKx2j3aqJQDMxLFzs/u/mjA9Z5LCgy6BE0f7yFWMjrPLnS/sPNn8ARY/FXw6byV18EFutn5lTO6+UsV5A==}
+  vue-router@4.4.5:
+    resolution: {integrity: sha512-4fKZygS8cH1yCyuabAXGUAsyi1b2/o/OKgu/RUb+znIYOxPRxdkytJEx+0wGcpBE1pX6vUgh5jwWOKRGvuA/7Q==}
     peerDependencies:
       vue: ^3.2.0
 
@@ -6640,7 +6635,7 @@ snapshots:
       '@vue/compiler-dom': 3.5.6
       '@vue/shared': 3.5.6
 
-  '@vue/devtools-api@6.6.3': {}
+  '@vue/devtools-api@6.6.4': {}
 
   '@vue/devtools-core@7.3.3(vite@5.4.2(@types/node@20.14.10)(terser@5.31.2))':
     dependencies:
@@ -9041,13 +9036,13 @@ snapshots:
       unenv: 1.10.0
       unimport: 3.11.1(rollup@4.18.1)
       unplugin: 1.12.3
-      unplugin-vue-router: 0.10.7(rollup@4.18.1)(vue-router@4.4.3(vue@3.5.6(typescript@5.5.3)))(vue@3.5.6(typescript@5.5.3))
+      unplugin-vue-router: 0.10.7(rollup@4.18.1)(vue-router@4.4.5(vue@3.5.6(typescript@5.5.3)))(vue@3.5.6(typescript@5.5.3))
       unstorage: 1.10.2(@upstash/redis@1.34.0)(ioredis@5.4.1)
       untyped: 1.4.2
       vue: 3.5.6(typescript@5.5.3)
       vue-bundle-renderer: 2.1.0
       vue-devtools-stub: 0.1.0
-      vue-router: 4.4.3(vue@3.5.6(typescript@5.5.3))
+      vue-router: 4.4.5(vue@3.5.6(typescript@5.5.3))
     optionalDependencies:
       '@parcel/watcher': 2.4.1
       '@types/node': 20.14.10
@@ -10371,7 +10366,7 @@ snapshots:
 
   universalify@2.0.1: {}
 
-  unplugin-vue-router@0.10.7(rollup@4.18.1)(vue-router@4.4.3(vue@3.5.6(typescript@5.5.3)))(vue@3.5.6(typescript@5.5.3)):
+  unplugin-vue-router@0.10.7(rollup@4.18.1)(vue-router@4.4.5(vue@3.5.6(typescript@5.5.3)))(vue@3.5.6(typescript@5.5.3)):
     dependencies:
       '@babel/types': 7.25.6
       '@rollup/pluginutils': 5.1.0(rollup@4.18.1)
@@ -10388,7 +10383,7 @@ snapshots:
       unplugin: 1.12.3
       yaml: 2.5.0
     optionalDependencies:
-      vue-router: 4.4.3(vue@3.5.6(typescript@5.5.3))
+      vue-router: 4.4.5(vue@3.5.6(typescript@5.5.3))
     transitivePeerDependencies:
       - rollup
       - vue
@@ -10634,14 +10629,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vue-router@4.4.2(vue@3.5.6(typescript@5.5.3)):
+  vue-router@4.4.5(vue@3.5.6(typescript@5.5.3)):
     dependencies:
-      '@vue/devtools-api': 6.6.3
-      vue: 3.5.6(typescript@5.5.3)
-
-  vue-router@4.4.3(vue@3.5.6(typescript@5.5.3)):
-    dependencies:
-      '@vue/devtools-api': 6.6.3
+      '@vue/devtools-api': 6.6.4
       vue: 3.5.6(typescript@5.5.3)
 
   vue@3.5.6(typescript@5.5.3):
