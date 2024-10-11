@@ -24,14 +24,18 @@ type GithubContributedToResponse = {
   };
 };
 
-const hardcoded: Project[] = [
+const hardcoded = [
   {
     name: 'nim-lang/nim',
     description:
       'Nim is a statically typed compiled systems programming language. It combines successful concepts from mature languages like Python, Ada and Modula. Its design focuses on efficiency, expressiveness, and elegance (in that order of priority).',
     homepageUrl: 'https://nim-lang.org',
     url: 'https://github.com/nim-lang/Nim',
-    languages: [{ color: '#ffc200', name: 'Nim' }],
+    languages: [
+      { color: '#ffc200', name: 'Nim' },
+      { color: '#e34c26', name: 'HTML' },
+      { color: '#3572A5', name: 'Python' },
+    ],
   },
   {
     name: 'raphamorim/rio',
@@ -39,7 +43,11 @@ const hardcoded: Project[] = [
       'A hardware-accelerated GPU terminal emulator focusing to run in desktops and browsers.',
     homepageUrl: 'https://raphamorim.io/rio',
     url: 'https://github.com/raphamorim/rio',
-    languages: [{ color: '#dea584', name: 'Rust' }],
+    languages: [
+      { color: '#dea584', name: 'Rust' },
+      { color: '#1a5e9a', name: 'WGSL' },
+      { color: '#89e051', name: 'Shell' },
+    ],
   },
   {
     name: 'stevearc/conform.nvim',
@@ -61,6 +69,30 @@ const hardcoded: Project[] = [
     languages: [],
   },
   {
+    name: 'microlinkhq/unavatar',
+    description:
+      'Get unified user avatar from social networks, including Instagram, SoundCloud, Telegram, Twitter, YouTube & more.',
+    homepageUrl: 'https://unavatar.io',
+    url: 'https://github.com/microlinkhq/unavatar',
+    languages: [
+      { color: '#f1e05a', name: 'JavaScript' },
+      { color: '#563d7c', name: 'CSS' },
+      { color: '#e34c26', name: 'HTML' },
+    ],
+  },
+  {
+    name: 'hey-api/openapi-ts',
+    description:
+      '✨ Turn your OpenAPI specification into a beautiful TypeScript client',
+    homepageUrl: 'https://heyapi.vercel.app',
+    url: 'https://github.com/hey-api/openapi-ts',
+    languages: [
+      { color: '#3178c6', name: 'TypeScript' },
+      { color: '#f1e05a', name: 'JavaScript' },
+      { color: '#f7931e', name: 'Handlebars' },
+    ],
+  },
+  {
     name: 'olimorris/onedarkpro.nvim',
     description:
       "🎨 Atom's iconic One Dark theme. Cacheable, fully customisable, Tree-sitter and LSP semantic token support. Comes with variants",
@@ -73,12 +105,45 @@ const hardcoded: Project[] = [
     ],
   },
   {
+    name: 'mason-org/mason-registry',
+    description: 'Core registry for mason.nvim.',
+    homepageUrl: 'https://mason-registry.dev/registry/list',
+    url: 'https://github.com/mason-org/mason-registry',
+    languages: [],
+  },
+  {
+    name: 'nvimtools/none-ls-extras.nvim',
+    description:
+      'Extra sources for none-ls.nvim. Not extensively tested, may be prone to break.',
+    homepageUrl: '',
+    url: 'https://github.com/nvimtools/none-ls-extras.nvim',
+    languages: [
+      { color: '#000080', name: 'Lua' },
+      { color: '#427819', name: 'Makefile' },
+    ],
+  },
+  {
+    name: 'gleam-lang/packages',
+    description: '📦 Search for Gleam packages',
+    homepageUrl: 'https://packages.gleam.run/',
+    url: 'https://github.com/gleam-lang/packages',
+    languages: [
+      { color: '#ffaff3', name: 'Gleam' },
+      { color: '#563d7c', name: 'CSS' },
+      { color: '#384d54', name: 'Dockerfile' },
+    ],
+  },
+  {
     name: 'byron/pulldown-cmark-to-cmark',
     description:
       'Convert pulldown-cmark Events back to the string they were parsed from',
     homepageUrl: 'https://docs.rs/crate/pulldown-cmark-to-cmark',
     url: 'https://github.com/Byron/pulldown-cmark-to-cmark',
-    languages: [{ color: '#dea584', name: 'Rust' }],
+    languages: [
+      { color: '#dea584', name: 'Rust' },
+      { color: '#89e051', name: 'Shell' },
+      { color: '#427819', name: 'Makefile' },
+    ],
   },
   {
     name: 'sparckles/robyn',

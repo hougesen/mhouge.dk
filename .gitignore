@@ -26,3 +26,5 @@ logs
 .obsidian
 
 content/blog/drafts
+
+.eslintcache

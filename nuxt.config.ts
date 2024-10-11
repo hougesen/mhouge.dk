@@ -58,6 +58,8 @@ export default defineNuxtConfig({
     },
   },
 
+  compatibilityDate: '2024-10-11',
+
   content: {
     experimental: {
       cacheContents: true,
@@ -115,6 +117,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   postcss: {
     plugins: {
       autoprefixer: {},
