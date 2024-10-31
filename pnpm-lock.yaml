@@ -28,8 +28,8 @@ importers:
         specifier: ^4.1.7
         version: 4.1.7(magicast@0.3.5)(rollup@4.24.2)(vite@5.4.8(@types/node@20.14.10)(terser@5.31.2))(vue@3.5.10(typescript@5.5.3))(webpack-sources@3.2.3)
       '@nuxtjs/sitemap':
-        specifier: ^6.1.1
-        version: 6.1.1(h3@1.13.0)(magicast@0.3.5)(rollup@4.24.2)(vite@5.4.8(@types/node@20.14.10)(terser@5.31.2))(vue@3.5.10(typescript@5.5.3))(webpack-sources@3.2.3)
+        specifier: ^6.1.3
+        version: 6.1.3(h3@1.13.0)(magicast@0.3.5)(rollup@4.24.2)(vite@5.4.8(@types/node@20.14.10)(terser@5.31.2))(vue@3.5.10(typescript@5.5.3))(webpack-sources@3.2.3)
       '@tailwindcss/typography':
         specifier: ^0.5.15
         version: 0.5.15(tailwindcss@3.4.14)
@@ -1045,8 +1045,8 @@ packages:
   '@nuxtjs/robots@4.1.7':
     resolution: {integrity: sha512-1rz2oyBNmpfIzqNG9LfGft+H8Wpp1BMmPyNhkm7BuG/jUXTBFaCh6HDeK6Otx2y53Z9JtCDhiIs/JHj/L4WLPw==}
 
-  '@nuxtjs/sitemap@6.1.1':
-    resolution: {integrity: sha512-wjvaqLm+kecH7K22E9eKzxolfWlcBL3Nw1/UHJUz7UcLMfFNl8T28MMx7xeVKR5oNeFYCHJTWbqNJ+ZXjb727g==}
+  '@nuxtjs/sitemap@6.1.3':
+    resolution: {integrity: sha512-wW3ntA4nRSyCqgMhAOF8LuPMlIn+mvXBShhdhBQiuBsGXVzip/8PPHdgiYjNt6iB4Q3+lHo0RwObeMxfnrTvoA==}
     engines: {node: '>=18.0.0'}
 
   '@parcel/watcher-android-arm64@2.4.1':
@@ -1978,6 +1978,9 @@ packages:
 
   confbox@0.1.7:
     resolution: {integrity: sha512-uJcB/FKZtBMCJpK8MQji6bJHgu1tixKPxRLeGkNzBoOZzpnZUJm0jm2/sBDWcuBx1dYgxV4JU+g5hmNxCyAmdA==}
+
+  confbox@0.1.8:
+    resolution: {integrity: sha512-RMtmw0iFkeR4YV+fUOSucriAQNb9g8zFR52MWCtl+cCZOFRNL6zeB395vPzFhEjjn4fMxXudmELnl/KF/WrK6w==}
 
   consola@3.2.3:
     resolution: {integrity: sha512-I5qxpzLv+sJhTVEoLYNcTW+bThDCPsit0vLNKShZx6rLtpilNpmmeTPaeqJb9ZE9dV3DGaeby6Vuhrw38WjeyQ==}
@@ -3513,6 +3516,9 @@ packages:
   ofetch@1.4.0:
     resolution: {integrity: sha512-MuHgsEhU6zGeX+EMh+8mSMrYTnsqJQQrpM00Q6QHMKNqQ0bKy0B43tk8tL1wg+CnsSTy1kg4Ir2T5Ig6rD+dfQ==}
 
+  ofetch@1.4.1:
+    resolution: {integrity: sha512-QZj2DfGplQAr2oj9KzceK9Hwz6Whxazmn85yYeVuS3u9XTMOGMRx0kO95MQ+vLsj/S/NwBDMMLU5hpxvI6Tklw==}
+
   ohash@1.1.4:
     resolution: {integrity: sha512-FlDryZAahJmEF3VR3w1KogSEdWX3WhA5GPakFx4J81kEAiHyLMpdLLElS8n8dfNadMgAne/MywcvmogzscVt4g==}
 
@@ -3673,6 +3679,9 @@ packages:
 
   pkg-types@1.2.0:
     resolution: {integrity: sha512-+ifYuSSqOQ8CqP4MbZA5hDpb97n3E8SVWdJe+Wms9kj745lmd3b7EZJiqvmLwAlmRfjrI7Hi5z3kdBJ93lFNPA==}
+
+  pkg-types@1.2.1:
+    resolution: {integrity: sha512-sQoqa8alT3nHjGuTjuKgOnvjo4cljkufdtLMnO2LBP/wRwuDlo1tkaEdMxCRhyGRPacv/ztlZgDPm2b7FAmEvw==}
 
   pluralize@8.0.0:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
@@ -4183,6 +4192,10 @@ packages:
   sirv@2.0.4:
     resolution: {integrity: sha512-94Bdh3cC2PKrbgSOUqTiGPWVZeSiXfKOVZNJniWoqrWrRkB1CJzBU3NEbiTsPcYy1lDsANA/THzS+9WBiy5nfQ==}
     engines: {node: '>= 10'}
+
+  sirv@3.0.0:
+    resolution: {integrity: sha512-BPwJGUeDaDCHihkORDchNyyTvWFhcusy1XMmhEVTQTwGeybFbp8YEmB+njbPnth1FibULBSBVwCQni25XlCUDg==}
+    engines: {node: '>=18'}
 
   sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
@@ -5917,7 +5930,7 @@ snapshots:
       knitwork: 1.1.0
       mlly: 1.7.2
       pathe: 1.1.2
-      pkg-types: 1.2.0
+      pkg-types: 1.2.1
       scule: 1.3.0
       semver: 7.6.3
       ufo: 1.5.4
@@ -6099,21 +6112,21 @@ snapshots:
       - vue
       - webpack-sources
 
-  '@nuxtjs/sitemap@6.1.1(h3@1.13.0)(magicast@0.3.5)(rollup@4.24.2)(vite@5.4.8(@types/node@20.14.10)(terser@5.31.2))(vue@3.5.10(typescript@5.5.3))(webpack-sources@3.2.3)':
+  '@nuxtjs/sitemap@6.1.3(h3@1.13.0)(magicast@0.3.5)(rollup@4.24.2)(vite@5.4.8(@types/node@20.14.10)(terser@5.31.2))(vue@3.5.10(typescript@5.5.3))(webpack-sources@3.2.3)':
     dependencies:
-      '@nuxt/devtools-kit': 1.5.1(magicast@0.3.5)(rollup@4.24.2)(vite@5.4.8(@types/node@20.14.10)(terser@5.31.2))(webpack-sources@3.2.3)
+      '@nuxt/devtools-kit': 1.6.0(magicast@0.3.5)(rollup@4.24.2)(vite@5.4.8(@types/node@20.14.10)(terser@5.31.2))(webpack-sources@3.2.3)
       '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.24.2)(webpack-sources@3.2.3)
       chalk: 5.3.0
       defu: 6.1.4
       h3-compression: 0.3.2(h3@1.13.0)
       nuxt-site-config: 2.2.18(magicast@0.3.5)(rollup@4.24.2)(vite@5.4.8(@types/node@20.14.10)(terser@5.31.2))(vue@3.5.10(typescript@5.5.3))(webpack-sources@3.2.3)
       nuxt-site-config-kit: 2.2.18(magicast@0.3.5)(rollup@4.24.2)(vue@3.5.10(typescript@5.5.3))(webpack-sources@3.2.3)
-      ofetch: 1.4.0
+      ofetch: 1.4.1
       pathe: 1.1.2
-      pkg-types: 1.2.0
+      pkg-types: 1.2.1
       radix3: 1.1.2
       semver: 7.6.3
-      sirv: 2.0.4
+      sirv: 3.0.0
       site-config-stack: 2.2.18(vue@3.5.10(typescript@5.5.3))
       ufo: 1.5.4
     transitivePeerDependencies:
@@ -7144,6 +7157,8 @@ snapshots:
   concat-map@0.0.1: {}
 
   confbox@0.1.7: {}
+
+  confbox@0.1.8: {}
 
   consola@3.2.3: {}
 
@@ -9091,7 +9106,7 @@ snapshots:
     dependencies:
       '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.24.2)(webpack-sources@3.2.3)
       '@nuxt/schema': 3.13.2(rollup@4.24.2)(webpack-sources@3.2.3)
-      pkg-types: 1.2.0
+      pkg-types: 1.2.1
       site-config-stack: 2.2.18(vue@3.5.10(typescript@5.5.3))
       std-env: 3.7.0
       ufo: 1.5.4
@@ -9109,7 +9124,7 @@ snapshots:
       '@nuxt/schema': 3.13.2(rollup@4.24.2)(webpack-sources@3.2.3)
       nuxt-site-config-kit: 2.2.18(magicast@0.3.5)(rollup@4.24.2)(vue@3.5.10(typescript@5.5.3))(webpack-sources@3.2.3)
       pathe: 1.1.2
-      pkg-types: 1.2.0
+      pkg-types: 1.2.1
       sirv: 2.0.4
       site-config-stack: 2.2.18(vue@3.5.10(typescript@5.5.3))
       ufo: 1.5.4
@@ -9248,6 +9263,12 @@ snapshots:
   object-hash@3.0.0: {}
 
   ofetch@1.4.0:
+    dependencies:
+      destr: 2.0.3
+      node-fetch-native: 1.6.4
+      ufo: 1.5.4
+
+  ofetch@1.4.1:
     dependencies:
       destr: 2.0.3
       node-fetch-native: 1.6.4
@@ -9416,6 +9437,12 @@ snapshots:
   pkg-types@1.2.0:
     dependencies:
       confbox: 0.1.7
+      mlly: 1.7.2
+      pathe: 1.1.2
+
+  pkg-types@1.2.1:
+    dependencies:
+      confbox: 0.1.8
       mlly: 1.7.2
       pathe: 1.1.2
 
@@ -10028,6 +10055,12 @@ snapshots:
     optional: true
 
   sirv@2.0.4:
+    dependencies:
+      '@polka/url': 1.0.0-next.25
+      mrmime: 2.0.0
+      totalist: 3.0.1
+
+  sirv@3.0.0:
     dependencies:
       '@polka/url': 1.0.0-next.25
       mrmime: 2.0.0
