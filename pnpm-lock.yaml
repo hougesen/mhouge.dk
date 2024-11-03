@@ -28,8 +28,8 @@ importers:
         specifier: ^4.1.10
         version: 4.1.10(magicast@0.3.5)(rollup@4.24.2)(vite@5.4.8(@types/node@20.14.10)(terser@5.31.2))(vue@3.5.12(typescript@5.5.3))(webpack-sources@3.2.3)
       '@nuxtjs/sitemap':
-        specifier: ^6.1.3
-        version: 6.1.3(h3@1.13.0)(magicast@0.3.5)(rollup@4.24.2)(vite@5.4.8(@types/node@20.14.10)(terser@5.31.2))(vue@3.5.12(typescript@5.5.3))(webpack-sources@3.2.3)
+        specifier: ^6.1.4
+        version: 6.1.4(h3@1.13.0)(magicast@0.3.5)(rollup@4.24.2)(vite@5.4.8(@types/node@20.14.10)(terser@5.31.2))(vue@3.5.12(typescript@5.5.3))(webpack-sources@3.2.3)
       '@tailwindcss/typography':
         specifier: ^0.5.15
         version: 0.5.15(tailwindcss@3.4.14)
@@ -1035,8 +1035,8 @@ packages:
   '@nuxtjs/robots@4.1.10':
     resolution: {integrity: sha512-nfqLtQwKIRtojegI+67xgUF7kqfK1PhYPT0AaGWMyGiTTAP6kwco1L52wY0p8v5H7w7SIwZ4WFG8WODJpBeUQQ==}
 
-  '@nuxtjs/sitemap@6.1.3':
-    resolution: {integrity: sha512-wW3ntA4nRSyCqgMhAOF8LuPMlIn+mvXBShhdhBQiuBsGXVzip/8PPHdgiYjNt6iB4Q3+lHo0RwObeMxfnrTvoA==}
+  '@nuxtjs/sitemap@6.1.4':
+    resolution: {integrity: sha512-zhLacKvclNTScCaOyXRlmwt/yQnx8RtrHgnkWrEWU55ZJKWR3e5MImrZv4Ad3LSQFWnm9i4lmTsF0bLmE9Gt6w==}
     engines: {node: '>=18.0.0'}
 
   '@parcel/watcher-android-arm64@2.4.1':
@@ -5935,7 +5935,7 @@ snapshots:
       jiti: 1.21.6
       mri: 1.2.0
       nanoid: 5.0.7
-      ofetch: 1.4.0
+      ofetch: 1.4.1
       package-manager-detector: 0.2.0
       parse-git-config: 3.0.0
       pathe: 1.1.2
@@ -6071,7 +6071,7 @@ snapshots:
       - vue
       - webpack-sources
 
-  '@nuxtjs/sitemap@6.1.3(h3@1.13.0)(magicast@0.3.5)(rollup@4.24.2)(vite@5.4.8(@types/node@20.14.10)(terser@5.31.2))(vue@3.5.12(typescript@5.5.3))(webpack-sources@3.2.3)':
+  '@nuxtjs/sitemap@6.1.4(h3@1.13.0)(magicast@0.3.5)(rollup@4.24.2)(vite@5.4.8(@types/node@20.14.10)(terser@5.31.2))(vue@3.5.12(typescript@5.5.3))(webpack-sources@3.2.3)':
     dependencies:
       '@nuxt/devtools-kit': 1.6.0(magicast@0.3.5)(rollup@4.24.2)(vite@5.4.8(@types/node@20.14.10)(terser@5.31.2))(webpack-sources@3.2.3)
       '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.24.2)(webpack-sources@3.2.3)
@@ -8187,7 +8187,7 @@ snapshots:
       h3: 1.13.0
       image-meta: 0.2.1
       listhen: 1.9.0
-      ofetch: 1.4.0
+      ofetch: 1.4.1
       pathe: 1.1.2
       sharp: 0.32.6
       svgo: 3.3.2
@@ -8952,7 +8952,7 @@ snapshots:
       mlly: 1.7.2
       mri: 1.2.0
       node-fetch-native: 1.6.4
-      ofetch: 1.4.0
+      ofetch: 1.4.1
       ohash: 1.1.4
       openapi-typescript: 6.7.6
       pathe: 1.1.2
@@ -10518,7 +10518,7 @@ snapshots:
       lru-cache: 10.4.3
       mri: 1.2.0
       node-fetch-native: 1.6.4
-      ofetch: 1.4.0
+      ofetch: 1.4.1
       ufo: 1.5.4
     optionalDependencies:
       '@upstash/redis': 1.34.3
