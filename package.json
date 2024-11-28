@@ -37,7 +37,7 @@
     "@nuxt/devtools": "^1.6.0",
     "@nuxt/eslint": "^0.6.1",
     "@nuxt/image": "^1.8.1",
-    "@nuxtjs/robots": "^4.1.10",
+    "@nuxtjs/robots": "^5.0.0",
     "@nuxtjs/sitemap": "^6.1.4",
     "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.20",
