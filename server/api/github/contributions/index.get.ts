@@ -24,7 +24,7 @@ type GithubContributedToResponse = {
   };
 };
 
-const hardcoded = [
+const hardcoded: Project[] = [
   {
     name: 'nim-lang/nim',
     description:
@@ -36,112 +36,17 @@ const hardcoded = [
       { color: '#e34c26', name: 'HTML' },
       { color: '#3572A5', name: 'Python' },
     ],
+    stargazerCount: 16767,
   },
   {
-    name: 'raphamorim/rio',
+    name: 'analysis-tools-dev/static-analysis',
     description:
-      'A hardware-accelerated GPU terminal emulator focusing to run in desktops and browsers.',
-    homepageUrl: 'https://raphamorim.io/rio',
-    url: 'https://github.com/raphamorim/rio',
+      '⚙️ A curated list of static analysis (SAST) tools and linters for all programming languages, config files, build tools, and more. The focus is on tools which improve code quality.',
+    homepageUrl: 'https://analysis-tools.dev',
+    stargazerCount: 13527,
+    url: 'https://github.com/analysis-tools-dev/static-analysis',
     languages: [
       { color: '#dea584', name: 'Rust' },
-      { color: '#1a5e9a', name: 'WGSL' },
-      { color: '#89e051', name: 'Shell' },
-    ],
-  },
-  {
-    name: 'stevearc/conform.nvim',
-    description: 'Lightweight yet powerful formatter plugin for Neovim',
-    homepageUrl: '',
-    url: 'https://github.com/stevearc/conform.nvim',
-    languages: [
-      { color: '#000080', name: 'Lua' },
-      { color: '#3572A5', name: 'Python' },
-      { color: '#89e051', name: 'Shell' },
-    ],
-  },
-  {
-    name: 'mundimark/awesome-markdown',
-    description:
-      'A collection of awesome markdown goodies (libraries, services, editors, tools, cheatsheets, etc.)',
-    homepageUrl: '',
-    url: 'https://github.com/mundimark/awesome-markdown',
-    languages: [],
-  },
-  {
-    name: 'microlinkhq/unavatar',
-    description:
-      'Get unified user avatar from social networks, including Instagram, SoundCloud, Telegram, Twitter, YouTube & more.',
-    homepageUrl: 'https://unavatar.io',
-    url: 'https://github.com/microlinkhq/unavatar',
-    languages: [
-      { color: '#f1e05a', name: 'JavaScript' },
-      { color: '#563d7c', name: 'CSS' },
-      { color: '#e34c26', name: 'HTML' },
-    ],
-  },
-  {
-    name: 'hey-api/openapi-ts',
-    description:
-      '✨ Turn your OpenAPI specification into a beautiful TypeScript client',
-    homepageUrl: 'https://heyapi.vercel.app',
-    url: 'https://github.com/hey-api/openapi-ts',
-    languages: [
-      { color: '#3178c6', name: 'TypeScript' },
-      { color: '#f1e05a', name: 'JavaScript' },
-      { color: '#f7931e', name: 'Handlebars' },
-    ],
-  },
-  {
-    name: 'olimorris/onedarkpro.nvim',
-    description:
-      "🎨 Atom's iconic One Dark theme. Cacheable, fully customisable, Tree-sitter and LSP semantic token support. Comes with variants",
-    homepageUrl: '',
-    url: 'https://github.com/olimorris/onedarkpro.nvim',
-    languages: [
-      { color: '#000080', name: 'Lua' },
-      { color: '#199f4b', name: 'Vim Script' },
-      { color: '#1e4aec', name: 'Scheme' },
-    ],
-  },
-  {
-    name: 'mason-org/mason-registry',
-    description: 'Core registry for mason.nvim.',
-    homepageUrl: 'https://mason-registry.dev/registry/list',
-    url: 'https://github.com/mason-org/mason-registry',
-    languages: [],
-  },
-  {
-    name: 'nvimtools/none-ls-extras.nvim',
-    description:
-      'Extra sources for none-ls.nvim. Not extensively tested, may be prone to break.',
-    homepageUrl: '',
-    url: 'https://github.com/nvimtools/none-ls-extras.nvim',
-    languages: [
-      { color: '#000080', name: 'Lua' },
-      { color: '#427819', name: 'Makefile' },
-    ],
-  },
-  {
-    name: 'gleam-lang/packages',
-    description: '📦 Search for Gleam packages',
-    homepageUrl: 'https://packages.gleam.run/',
-    url: 'https://github.com/gleam-lang/packages',
-    languages: [
-      { color: '#ffaff3', name: 'Gleam' },
-      { color: '#563d7c', name: 'CSS' },
-      { color: '#384d54', name: 'Dockerfile' },
-    ],
-  },
-  {
-    name: 'byron/pulldown-cmark-to-cmark',
-    description:
-      'Convert pulldown-cmark Events back to the string they were parsed from',
-    homepageUrl: 'https://docs.rs/crate/pulldown-cmark-to-cmark',
-    url: 'https://github.com/Byron/pulldown-cmark-to-cmark',
-    languages: [
-      { color: '#dea584', name: 'Rust' },
-      { color: '#89e051', name: 'Shell' },
       { color: '#427819', name: 'Makefile' },
     ],
   },
@@ -155,6 +60,105 @@ const hardcoded = [
       { color: '#3572A5', name: 'Python' },
       { color: '#dea584', name: 'Rust' },
     ],
+    stargazerCount: 5142,
+  },
+  {
+    name: 'raphamorim/rio',
+    description:
+      'A hardware-accelerated GPU terminal emulator focusing to run in desktops and browsers.',
+    homepageUrl: 'https://raphamorim.io/rio',
+    url: 'https://github.com/raphamorim/rio',
+    languages: [
+      { color: '#dea584', name: 'Rust' },
+      { color: '#f1e05a', name: 'JavaScript' },
+      { color: '#1a5e9a', name: 'WGSL' },
+    ],
+    stargazerCount: 4567,
+  },
+  {
+    name: 'stevearc/conform.nvim',
+    description: 'Lightweight yet powerful formatter plugin for Neovim',
+    homepageUrl: '',
+    stargazerCount: 3522,
+    url: 'https://github.com/stevearc/conform.nvim',
+    languages: [
+      { color: '#000080', name: 'Lua' },
+      { color: '#3572A5', name: 'Python' },
+      { color: '#89e051', name: 'Shell' },
+    ],
+  },
+  {
+    name: 'hey-api/openapi-ts',
+    description:
+      '🚀 The OpenAPI to TypeScript codegen. Generate clients, SDKs, validators, and more. Support: @mrlubos',
+    homepageUrl: 'https://heyapi.dev',
+    url: 'https://github.com/hey-api/openapi-ts',
+    languages: [
+      { color: '#3178c6', name: 'TypeScript' },
+      { color: '#f1e05a', name: 'JavaScript' },
+      { color: '#f7931e', name: 'Handlebars' },
+    ],
+    stargazerCount: 1752,
+  },
+  {
+    name: 'axodotdev/cargo-dist',
+    description: '📦 shippable application packaging',
+    homepageUrl: 'https://axodotdev.github.io/cargo-dist/',
+    url: 'https://github.com/axodotdev/cargo-dist',
+    languages: [
+      { color: '#dea584', name: 'Rust' },
+      { color: '#a52a22', name: 'Jinja' },
+      { color: '#89e051', name: 'Shell' },
+    ],
+    stargazerCount: 1609,
+  },
+  {
+    name: 'mundimark/awesome-markdown',
+    description:
+      'A collection of awesome markdown goodies (libraries, services, editors, tools, cheatsheets, etc.)',
+    homepageUrl: '',
+    url: 'https://github.com/mundimark/awesome-markdown',
+    languages: [],
+    stargazerCount: 1559,
+  },
+  {
+    name: 'michaelb/sniprun',
+    description:
+      'A neovim plugin to run lines/blocs of code (independently of the rest of the file), supporting multiples languages',
+    homepageUrl: '',
+    url: 'https://github.com/michaelb/sniprun',
+    languages: [
+      { color: '#dea584', name: 'Rust' },
+      { color: '#000080', name: 'Lua' },
+      { color: '#89e051', name: 'Shell' },
+    ],
+    stargazerCount: 1526,
+  },
+  {
+    name: 'microlinkhq/unavatar',
+    description:
+      'Get unified user avatar from social networks, including Instagram, SoundCloud, Telegram, Twitter, YouTube & more.',
+    homepageUrl: 'https://unavatar.io',
+    url: 'https://github.com/microlinkhq/unavatar',
+    languages: [
+      { color: '#f1e05a', name: 'JavaScript' },
+      { color: '#663399', name: 'CSS' },
+      { color: '#e34c26', name: 'HTML' },
+    ],
+    stargazerCount: 1247,
+  },
+  {
+    name: 'myriad-dreamin/tinymist',
+    description:
+      'Tinymist [ˈtaɪni mɪst] is an integrated language service for Typst [taɪpst].',
+    homepageUrl: 'https://myriad-dreamin.github.io/tinymist',
+    url: 'https://github.com/Myriad-Dreamin/tinymist',
+    languages: [
+      { color: '#dea584', name: 'Rust' },
+      { color: '#3178c6', name: 'TypeScript' },
+      { color: '#239dad', name: 'Typst' },
+    ],
+    stargazerCount: 1081,
   },
   {
     name: 'lunatic-solutions/submillisecond',
@@ -162,6 +166,125 @@ const hardcoded = [
     homepageUrl: 'https://github.com/lunatic-solutions/submillisecond',
     url: 'https://github.com/lunatic-solutions/submillisecond',
     languages: [{ color: '#dea584', name: 'Rust' }],
+    stargazerCount: 912,
+  },
+  {
+    name: 'olimorris/onedarkpro.nvim',
+    description:
+      "🎨 Atom's iconic One Dark theme. Cacheable, fully customisable, Tree-sitter and LSP semantic token support. Comes with variants",
+    homepageUrl: '',
+    url: 'https://github.com/olimorris/onedarkpro.nvim',
+    languages: [
+      { color: '#000080', name: 'Lua' },
+      { color: '#1e4aec', name: 'Scheme' },
+      { color: '#199f4b', name: 'Vim Script' },
+    ],
+    stargazerCount: 861,
+  },
+  {
+    name: 'getsentry/sentry-rust',
+    description: 'Official Sentry SDK for Rust',
+    homepageUrl: 'https://sentry.io/',
+    url: 'https://github.com/getsentry/sentry-rust',
+    languages: [
+      { color: '#dea584', name: 'Rust' },
+      { color: '#427819', name: 'Makefile' },
+      { color: '#89e051', name: 'Shell' },
+    ],
+    stargazerCount: 629,
+  },
+  {
+    name: 'twitchdev/twitch-cli',
+    description: 'The official Twitch CLI to make developing on Twitch easier.',
+    homepageUrl: '',
+    url: 'https://github.com/twitchdev/twitch-cli',
+    languages: [
+      { color: '#00ADD8', name: 'Go' },
+      { color: '#427819', name: 'Makefile' },
+      { color: '#384d54', name: 'Dockerfile' },
+    ],
+    stargazerCount: 618,
+  },
+  {
+    name: 'cluelang/clue',
+    description: 'C/Rust like programming language that compiles into Lua code',
+    homepageUrl: 'https://crates.io/crates/clue',
+    url: 'https://github.com/ClueLang/Clue',
+    languages: [
+      { color: '#dea584', name: 'Rust' },
+      { color: '#000080', name: 'Lua' },
+      { color: '#89e051', name: 'Shell' },
+    ],
+    stargazerCount: 343,
+  },
+  {
+    name: 'mason-org/mason-registry',
+    description: 'Core registry for mason.nvim.',
+    homepageUrl: 'https://mason-registry.dev/registry/list',
+    url: 'https://github.com/mason-org/mason-registry',
+    languages: [],
+    stargazerCount: 168,
+  },
+  {
+    name: 'nvimtools/none-ls-extras.nvim',
+    description:
+      'Extra sources for none-ls.nvim. Not extensively tested, may be prone to break.',
+    homepageUrl: '',
+    url: 'https://github.com/nvimtools/none-ls-extras.nvim',
+    languages: [
+      { color: '#000080', name: 'Lua' },
+      { color: '#427819', name: 'Makefile' },
+    ],
+    stargazerCount: 99,
+  },
+  {
+    name: 'omnilib/ufmt',
+    description: 'Safe, atomic formatting with black and µsort',
+    homepageUrl: 'https://ufmt.omnilib.dev',
+    url: 'https://github.com/omnilib/ufmt',
+    languages: [
+      { color: '#3572A5', name: 'Python' },
+      { color: '#427819', name: 'Makefile' },
+    ],
+    stargazerCount: 98,
+  },
+  {
+    name: 'gleam-lang/packages',
+    description: '📦 Search for Gleam packages',
+    homepageUrl: 'https://packages.gleam.run/',
+    url: 'https://github.com/gleam-lang/packages',
+    languages: [
+      { color: '#ffaff3', name: 'Gleam' },
+      { color: '#663399', name: 'CSS' },
+      { color: '#B83998', name: 'Erlang' },
+    ],
+    stargazerCount: 84,
+  },
+  {
+    name: 'byron/pulldown-cmark-to-cmark',
+    description:
+      'Convert pulldown-cmark Events back to the string they were parsed from',
+    homepageUrl: 'https://docs.rs/crate/pulldown-cmark-to-cmark',
+    url: 'https://github.com/Byron/pulldown-cmark-to-cmark',
+    languages: [
+      { color: '#dea584', name: 'Rust' },
+      { color: '#89e051', name: 'Shell' },
+      { color: '#427819', name: 'Makefile' },
+    ],
+    stargazerCount: 47,
+  },
+  {
+    name: 'actechworld/vue-onboarding-tour',
+    description:
+      'VueOnboardingTour is a Vue.js component that creates guided, step-by-step onboarding tours to help users navigate your app intuitively.',
+    homepageUrl: 'https://vueonboardingtour.actechworld.com/',
+    url: 'https://github.com/acTechWorld/vue-onboarding-tour',
+    languages: [
+      { color: '#41b883', name: 'Vue' },
+      { color: '#f1e05a', name: 'JavaScript' },
+      { color: '#3178c6', name: 'TypeScript' },
+    ],
+    stargazerCount: 12,
   },
   {
     name: 'jdan/fizzbuzz-polyglot',
@@ -170,9 +293,32 @@ const hardcoded = [
     homepageUrl: 'https://github.com/jdan/fizzbuzz-polyglot',
     url: 'https://github.com/jdan/fizzbuzz-polyglot',
     languages: [{ color: '#000080', name: 'Lua' }],
+    stargazerCount: 11,
+  },
+  {
+    name: 'akiomik/mado',
+    description: 'A fast Markdown linter written in Rust.',
+    homepageUrl: '',
+    url: 'https://github.com/akiomik/mado',
+    languages: [
+      { color: '#dea584', name: 'Rust' },
+      { color: '#384d54', name: 'Just' },
+      { color: '#89e051', name: 'Shell' },
+    ],
+    stargazerCount: 7,
+  },
+  {
+    name: 'i18nhero/cli',
+    description: 'Cli for easily managing your  i18nhero locale files ',
+    homepageUrl: 'https://i18nhero.com',
+    stargazerCount: 2,
+    url: 'https://github.com/i18nhero/cli',
+    languages: [
+      { color: '#dea584', name: 'Rust' },
+      { color: '#384d54', name: 'Just' },
+    ],
   },
 ];
-
 export default defineCachedEventHandler(
   async (event): Promise<Project[]> => {
     const config = useRuntimeConfig(event);
@@ -278,7 +424,7 @@ export default defineCachedEventHandler(
     for (const repo of hardcoded) {
       const name = repo?.name?.toLowerCase();
 
-      if (!seenProjects.has(name)) {
+      if (!seenProjects.has(name) && !name.startsWith('kasperbnielsen/')) {
         projects.push({ ...repo, name });
 
         seenProjects.add(name);
