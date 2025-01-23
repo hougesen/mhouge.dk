@@ -403,6 +403,7 @@ export default defineCachedEventHandler(
               ...repo,
               name,
               languages: repo?.languages?.nodes ?? [],
+              stargazerCount: repo?.stargazerCount ?? 0,
             });
 
             seenProjects.add(name);
@@ -430,6 +431,14 @@ export default defineCachedEventHandler(
         seenProjects.add(name);
       }
     }
+
+    projects.sort((a, b) => {
+      if (a?.stargazerCount === b?.stargazerCount) {
+        return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+      }
+
+      return (b?.stargazerCount ?? 0) - (a?.stargazerCount ?? 0);
+    });
 
     if (projects?.length) {
       kvStore

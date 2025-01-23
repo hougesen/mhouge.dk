@@ -88,14 +88,6 @@ export default defineCachedEventHandler(
       }),
     );
 
-    projects.sort((a, b) => {
-      if (a?.stargazerCount === b?.stargazerCount) {
-        return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
-      }
-
-      return (b?.stargazerCount ?? 0) - (a?.stargazerCount ?? 0);
-    });
-
     if (projects.length) {
       kvStore
         .setex(cacheKey, REDIS_CACHE_DURATION, JSON.stringify(projects))
