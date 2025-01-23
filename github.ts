@@ -9,4 +9,5 @@ export type Project = {
   languages: Array<Language>;
   name: string;
   url: string;
+  stargazerCount: number;
 };

@@ -1,6 +1,5 @@
 // @ts-check
 
-// @ts-expect-error no type declaration?
 import tailwind from 'eslint-plugin-tailwindcss';
 import withNuxt from './.nuxt/eslint.config.mjs';
 

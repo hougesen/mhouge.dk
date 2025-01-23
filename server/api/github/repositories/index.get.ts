@@ -7,11 +7,12 @@ type GithubReposoryResponse = {
     user: {
       pinnedItems: {
         nodes: Array<{
-          description: string;
-          homepageUrl: string;
+          description: string | null;
+          homepageUrl: string | null;
           languages: { nodes: Array<{ color: string; name: string }> };
           name: string;
-          url: string;
+          url: string | null;
+          stargazerCount: number;
         }>;
       };
     };
@@ -80,8 +81,20 @@ export default defineCachedEventHandler(
       (p) => ({
         ...p,
         languages: p?.languages?.nodes ?? [],
+        description: p?.description ?? '',
+        homepageUrl: p?.homepageUrl ?? '',
+        url: p?.url ?? '',
+        stargazerCount: p?.stargazerCount ?? 0,
       }),
     );
+
+    projects.sort((a, b) => {
+      if (a?.stargazerCount === b?.stargazerCount) {
+        return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+      }
+
+      return (b?.stargazerCount ?? 0) - (a?.stargazerCount ?? 0);
+    });
 
     if (projects.length) {
       kvStore

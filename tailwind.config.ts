@@ -1,5 +1,5 @@
-import type { Config } from 'tailwindcss';
 import tailwindTypography from '@tailwindcss/typography';
+import type { Config } from 'tailwindcss';
 
 export default {
   content: [
