@@ -88,11 +88,6 @@ export default defineNuxtConfig({
     writeEarlyHints: true,
   },
 
-  image: {
-    domains: ['mhouge.dk'],
-    provider: 'ipxStatic',
-  },
-
   modules: [
     '@nuxt/image',
     '@nuxt/content',

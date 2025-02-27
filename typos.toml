@@ -1,0 +1,6 @@
+[files]
+extend-exclude = [
+  "content/blog/undergraduate-thesis.md",
+  "public/undergraduate-thesis/main.tex",
+  "public/undergraduate-thesis/sample.bib",
+]
