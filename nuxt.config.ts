@@ -64,6 +64,10 @@ export default defineNuxtConfig({
     experimental: {
       cacheContents: true,
     },
+    highlight: {
+      langs: ['shell', 'go'],
+      theme: 'one-dark-pro',
+    },
   },
 
   css: ['~/assets/css/main.css'],
