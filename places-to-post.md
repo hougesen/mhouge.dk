@@ -1,0 +1,15 @@
+| Website              | Type |
+| -------------------- | ---- |
+| daily.dev            | Link |
+| dev.to               | Post |
+| devdojo.com          | Post |
+| freecodecamp         | Post |
+| hackernoon           | Post |
+| hashnode             | Post |
+| indiehackers         | Post |
+| lobste.rs            | Link |
+| medium               | Post |
+| news.ycombinator.com | Link |
+| producthunt          | Link |
+| reddit               | Link |
+| substack             | Post |

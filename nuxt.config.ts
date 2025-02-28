@@ -64,6 +64,10 @@ export default defineNuxtConfig({
     experimental: {
       cacheContents: true,
     },
+    highlight: {
+      langs: ['shell', 'go'],
+      theme: 'one-dark-pro',
+    },
   },
 
   css: ['~/assets/css/main.css'],
@@ -86,11 +90,6 @@ export default defineNuxtConfig({
     payloadExtraction: true,
     sharedPrerenderData: true,
     writeEarlyHints: true,
-  },
-
-  image: {
-    domains: ['mhouge.dk'],
-    provider: 'ipxStatic',
   },
 
   modules: [

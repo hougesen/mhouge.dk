@@ -198,7 +198,7 @@ TypeScript, som er et syntaktisk supersæt af JavaScript der tillader annotering
 
 Under nærmere analyse af chatbeskederne blev der dog hurtigt tegnet et billede af at denne antagelse var yderst forkert. Grafen nedenunder viser hvilket emotes der er forekommet mest under en live stream på kanalen XQC. Af de hundrede tusinde emote der er blevet brugt under streamen er over 50% fra tredjeparts udvidelser. Derfor blev det en nødvendighed at indsamle emotene fra de to største tredjeparts udvidelser, BetterTTV og FrankerFaceZ.
 
-![mest hyppigt forekommende emotes på xqc stream - eget virke](/undergraduate-thesis/emote-occurence-xqc-41658710427.jpg)
+![mest hyppigt forekommende emotes på xqc stream - eget virke](/undergraduate-thesis/emote-occurrence-xqc-41658710427.jpg)
 
 Disse tré data indsamlere blev bygget til at kunne køres som cronjobs. Denne implementations detalje blev valgt fordi at tredjeparts udvidelserne tillader seere at uploade emotes, hvilket øger frekvensen i hvor ofte der bliver lavet nye drastisk.
 
