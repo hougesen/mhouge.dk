@@ -4,7 +4,7 @@ date created: 2023-12-19T22:20:26Z
 date modified: 2024-02-27T16:48:27Z
 ---
 
-As a junior developer you will often hear that the framework (or language) you choose doesn't matter. The people saying that are correct in the grand scheme of things. But they are overlooking the fact that it can have a big impact on how fast you can contribute as an inexperienced developer.
+As a junior developer you will often hear that the framework (or language) you choose doesn't matter. The people saying that are correct in the grand scheme of things, but they are overlooking the fact that it can have a big impact on how fast you can contribute as an inexperienced developer.
 
 One of the hardest things when you start working at a new company is getting comfortable with a new codebase. Having to learn a new framework at the same time will make that task a great deal harder.
 
