@@ -9,7 +9,7 @@ defineProps<{
 <template>
   <div
     v-if="pkg?.package?.name"
-    class="flex flex-col gap-1 rounded bg-white-secondary p-4 dark:bg-white-primary"
+    class="flex flex-col gap-1 rounded-sm bg-white-secondary p-4 dark:bg-white-primary"
   >
     <a
       class="text-dark-primary text-xl font-semibold dark:text-black-primary"
@@ -30,7 +30,7 @@ defineProps<{
         :href="pkg?.package?.links?.repository"
       >
         <IconsGithub
-          class="ml-auto aspect-square size-6 rounded bg-black-primary text-white-primary duration-300 hover:text-[color:var(--highlight)] dark:bg-white-primary dark:text-black-primary"
+          class="ml-auto aspect-square size-6 rounded-sm bg-black-primary text-white-primary duration-300 hover:text-[color:var(--highlight)] dark:bg-white-primary dark:text-black-primary"
         />
       </a>
     </div>
