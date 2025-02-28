@@ -107,6 +107,7 @@ export default defineNuxtConfig({
         '/',
         '/sitemap.xml',
         '/blog/choosing-a-tech-stack-as-a-junior-developer',
+        '/blog/rogue-one-a-malware-story',
         '/blog/undergraduate-thesis',
         '/lazy',
         '/leetcode',
