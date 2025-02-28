@@ -37,7 +37,7 @@ const data = computed(() => {
       <tr v-for="(point, pointIndex) of data" :key="pointIndex">
         <td class="w-full md:hidden">
           <div
-            class="h-5 rounded border border-black-secondary bg-[color:var(--highlight)] duration-1000 dark:border-white-secondary"
+            class="h-5 rounded-sm border border-black-secondary bg-[color:var(--highlight)] duration-1000 dark:border-white-secondary"
             :style="{ width: `${point.percent}%` }"
           ></div>
         </td>
@@ -52,7 +52,7 @@ const data = computed(() => {
 
         <td class="hidden w-full md:table-cell">
           <div
-            class="h-5 rounded border border-black-secondary bg-[color:var(--highlight)] duration-1000 dark:border-white-secondary"
+            class="h-5 rounded-sm border border-black-secondary bg-[color:var(--highlight)] duration-1000 dark:border-white-secondary"
             :style="{ width: `${point.percent}%` }"
           ></div>
         </td>

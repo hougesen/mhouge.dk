@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data: list } = await useAsyncData(() =>
+const { data: list } = await useAsyncData('blog-posts', () =>
   queryCollectionNavigation('content', ['path', 'title', 'date_created'])
     .order('date_created', 'DESC')
     .then((docs) => docs?.find((d) => d.path === '/blog')?.children ?? []),

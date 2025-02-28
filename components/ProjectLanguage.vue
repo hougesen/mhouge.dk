@@ -13,7 +13,7 @@ const customLanguageColors: Record<string, string> = {
 
 <template>
   <div
-    class="rounded px-2 py-1"
+    class="rounded-sm px-2 py-1"
     :language="language"
     :style="{
       backgroundColor: language?.color || 'deeppink',

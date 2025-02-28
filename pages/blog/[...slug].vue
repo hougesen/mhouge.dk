@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute();
 
-const { data: doc } = await useAsyncData(() =>
+const { data: doc } = await useAsyncData(`page-blog-${route.path}`, () =>
   queryCollection('content').path(route.path).first(),
 );
 
@@ -85,6 +85,6 @@ useServerSeoMeta({
 
 <style>
 img {
-  @apply rounded;
+  border-radius: var(--radius-sm);
 }
 </style>

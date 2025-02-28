@@ -1,3 +1,5 @@
+import tailwindcss from '@tailwindcss/vite';
+
 export default defineNuxtConfig({
   app: {
     head: {
@@ -105,19 +107,13 @@ export default defineNuxtConfig({
         '/',
         '/sitemap.xml',
         '/blog/choosing-a-tech-stack-as-a-junior-developer',
+        '/blog/rogue-one-a-malware-story',
         '/blog/undergraduate-thesis',
         '/lazy',
         '/leetcode',
         '/npm-packages',
         '/rust-packages',
       ],
-    },
-  },
-
-  postcss: {
-    plugins: {
-      autoprefixer: {},
-      tailwindcss: {},
     },
   },
 
@@ -165,4 +161,8 @@ export default defineNuxtConfig({
   ssr: true,
 
   telemetry: false,
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
