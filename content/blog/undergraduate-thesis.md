@@ -1,7 +1,7 @@
 ---
 title: Undergraduate thesis - Automatiseret generering af livestream højdepunkter
-date created: 2023-01-06T10:20:26Z
-date modified: 2024-02-27T16:48:36Z
+date_created: 2023-01-06T10:20:26Z
+date_modified: 2024-02-27T16:48:36Z
 ---
 
 ## Abstract

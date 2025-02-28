@@ -5,8 +5,12 @@ defineProps<{
   error: NuxtError;
 }>();
 
-useHead({
-  meta: [{ name: 'robots', content: 'noindex' }],
+useSeoMeta({
+  robots: 'noindex',
+});
+
+useServerSeoMeta({
+  robots: 'noindex',
 });
 </script>
 

@@ -14,4 +14,11 @@ export default withNuxt(tailwind.configs['flat/recommended'])
     rules: {
       'tailwindcss/no-custom-classname': 'off',
     },
+  })
+  .append({
+    rules: {
+      'object-shorthand': 'error',
+      'prefer-const': 'error',
+      'vue/no-multiple-template-root': 'off',
+    },
   });

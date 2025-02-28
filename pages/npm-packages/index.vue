@@ -1,10 +1,20 @@
 <script setup lang="ts">
+const title = 'NPM packages';
+
 useHead({
-  title: 'NPM packages',
+  title,
+});
+
+useServerHead({
+  title,
+});
+
+useSeoMeta({
+  title,
 });
 
 useServerSeoMeta({
-  title: 'NPM packages',
+  title,
 });
 
 const { data: packages } = useFetch('/api/npm/packages');

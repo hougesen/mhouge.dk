@@ -1,8 +1,22 @@
 <script setup lang="ts">
 const { data } = useFetch('/api/leetcode/stats');
 
+const title = 'Leetcode';
+
 useHead({
-  title: 'Leetcode',
+  title,
+});
+
+useServerHead({
+  title,
+});
+
+useSeoMeta({
+  title,
+});
+
+useServerSeoMeta({
+  title,
 });
 </script>
 

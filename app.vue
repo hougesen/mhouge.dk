@@ -3,30 +3,58 @@ const baseTitle = 'Mads Hougesen | Software Developer';
 const baseDescription =
   'Software developer from Denmark. Lover of all things programming - but  always learning new stuff.';
 const baseOgImage = '/og-image.png';
+const ogType = 'website';
+const author = 'Mads Hougesen';
+const ogSiteName = 'Mads Hougesen';
+const twitterCard = 'summary_large_image';
+const twitterCreator = 'mads_hougesen';
+const twitterSite = '@mads_hougesen';
 
-const titleTemplate = (title?: string) => {
-  if (title?.length) {
+function titleTemplate(title?: string) {
+  if (title?.length && title !== baseTitle) {
     return `${title} | Mads Hougesen`;
   }
   return baseTitle;
-};
+}
 
 useHead({
-  title: () => baseTitle,
+  title: baseTitle,
+  titleTemplate,
+});
+
+useServerHead({
+  title: baseTitle,
   titleTemplate,
 });
 
 useSeoMeta({
-  title: () => baseTitle,
-  titleTemplate,
-  author: 'Mads Hougesen',
+  author,
   description: baseDescription,
-  ogTitle: baseTitle,
   ogDescription: baseDescription,
   ogImage: baseOgImage,
-  twitterCard: 'summary_large_image',
-  twitterCreator: 'mads_hougesen',
-  ogSiteName: 'Mads Hougesen',
+  ogSiteName,
+  ogTitle: baseTitle,
+  ogType,
+  title: baseTitle,
+  titleTemplate,
+  twitterCard,
+  twitterCreator,
+  twitterSite,
+});
+
+useServerSeoMeta({
+  author,
+  description: baseDescription,
+  ogDescription: baseDescription,
+  ogImage: baseOgImage,
+  ogSiteName,
+  ogTitle: baseTitle,
+  ogType,
+  title: baseTitle,
+  titleTemplate,
+  twitterCard,
+  twitterCreator,
+  twitterSite,
 });
 </script>
 

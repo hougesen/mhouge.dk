@@ -1,10 +1,20 @@
 <script setup lang="ts">
+const title = 'Open Source contributions';
+
 useHead({
-  title: 'Open Source contributions',
+  title,
+});
+
+useServerHead({
+  title,
+});
+
+useSeoMeta({
+  title,
 });
 
 useServerSeoMeta({
-  title: 'Open Source contributions',
+  title,
 });
 
 const { data: repositories } = useFetch('/api/github/contributions');
