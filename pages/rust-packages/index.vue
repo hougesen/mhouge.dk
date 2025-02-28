@@ -1,10 +1,20 @@
 <script setup lang="ts">
+const title = 'Rust packages';
+
 useHead({
-  title: 'Rust packages',
+  title,
+});
+
+useServerHead({
+  title,
+});
+
+useSeoMeta({
+  title,
 });
 
 useServerSeoMeta({
-  title: 'Rust packages',
+  title,
 });
 
 const { data: crates } = useFetch('/api/cargo/packages');

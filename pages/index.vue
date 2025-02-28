@@ -3,6 +3,14 @@ useHead({
   title: '',
 });
 
+useServerHead({
+  title: '',
+});
+
+useSeoMeta({
+  title: '',
+});
+
 useServerSeoMeta({
   title: '',
 });
@@ -18,23 +26,7 @@ const { data: metrics } = useFetch('/api/wakatime');
 
     <Projects :projects="repositories || []" />
 
-    <ContentList v-slot="{ list }" path="/blog">
-      <section v-show="list?.length" class="flex flex-col gap-4">
-        <SectionTitle class="mb-4"> Thoughts </SectionTitle>
-
-        <NuxtLink
-          v-for="link in list.sort(
-            (a, b) =>
-              new Date(b?.['date created'] ?? 0).getTime() -
-              new Date(a?.['date created'] ?? 0).getTime(),
-          )"
-          :key="link._path"
-          class="transition-300 text-xl underline"
-          :to="link._path"
-          >{{ link.title }}</NuxtLink
-        >
-      </section>
-    </ContentList>
+    <BlogPosts />
 
     <Contact />
   </div>

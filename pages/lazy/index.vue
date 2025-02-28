@@ -1,8 +1,22 @@
 <script setup lang="ts">
 import { secondsToHHMMSS } from '~/strava';
 
+const title = 'Has Mads been lazy this week?';
+
 useHead({
-  title: 'Has Mads been lazy this week?',
+  title,
+});
+
+useServerHead({
+  title,
+});
+
+useSeoMeta({
+  title,
+});
+
+useServerSeoMeta({
+  title,
 });
 
 const { data: sports } = useFetch('/api/strava/activities');

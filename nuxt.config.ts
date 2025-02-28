@@ -61,12 +61,15 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-10-11',
 
   content: {
-    experimental: {
-      cacheContents: true,
-    },
-    highlight: {
-      langs: ['shell', 'go'],
-      theme: 'one-dark-pro',
+    build: {
+      markdown: {
+        highlight: {
+          langs: ['shell', 'go'],
+          theme: {
+            default: 'one-dark-pro',
+          },
+        },
+      },
     },
   },
 
@@ -94,9 +97,9 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/image',
-    '@nuxt/content',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
+    '@nuxt/content',
     '@nuxt/eslint',
   ],
 
