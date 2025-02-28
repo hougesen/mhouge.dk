@@ -95,13 +95,7 @@ export default defineNuxtConfig({
     writeEarlyHints: true,
   },
 
-  modules: [
-    '@nuxt/image',
-    '@nuxtjs/sitemap',
-    '@nuxtjs/robots',
-    '@nuxt/content',
-    '@nuxt/eslint',
-  ],
+  modules: ['@nuxtjs/seo', '@nuxt/image', '@nuxt/content', '@nuxt/eslint'],
 
   nitro: {
     minify: true,
@@ -158,6 +152,7 @@ export default defineNuxtConfig({
   site: {
     indexable: true,
     url: 'https://mhouge.dk',
+    defaultLocale: 'en',
   },
 
   sitemap: {
