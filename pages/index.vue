@@ -23,7 +23,11 @@ const { data: metrics } = useFetch('/api/wakatime');
         <SectionTitle class="mb-4"> Thoughts </SectionTitle>
 
         <NuxtLink
-          v-for="link in list"
+          v-for="link in list.sort(
+            (a, b) =>
+              new Date(b?.['date created'] ?? 0).getTime() -
+              new Date(a?.['date created'] ?? 0).getTime(),
+          )"
           :key="link._path"
           class="transition-300 text-xl underline"
           :to="link._path"
