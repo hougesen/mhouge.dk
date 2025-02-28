@@ -85,6 +85,6 @@ useServerSeoMeta({
 
 <style>
 img {
-  @apply rounded;
+  border-radius: var(--radius-sm);
 }
 </style>
