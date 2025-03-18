@@ -1,18 +1,20 @@
 <script setup lang="ts">
+const title = '';
+
 useHead({
-  title: '',
+  title,
 });
 
 useServerHead({
-  title: '',
+  title,
 });
 
 useSeoMeta({
-  title: '',
+  title,
 });
 
 useServerSeoMeta({
-  title: '',
+  title,
 });
 
 const { data: repositories } = useFetch('/api/github/repositories');
