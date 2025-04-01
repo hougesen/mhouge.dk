@@ -36,7 +36,7 @@
     "@nuxt/content": "^3.3.0",
     "@nuxt/devtools": "^2.3.0",
     "@nuxt/eslint": "^1.2.0",
-    "@nuxt/image": "^1.9.0",
+    "@nuxt/image": "^1.10.0",
     "@nuxtjs/seo": "3.0.1",
     "eslint-plugin-vuejs-accessibility": "^2.4.1",
     "nuxt": "^3.16.0",
