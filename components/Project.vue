@@ -8,10 +8,10 @@ defineProps<{
 
 <template>
   <div
-    class="flex flex-col gap-1 rounded-sm bg-white-secondary p-4 dark:bg-white-primary"
+    class="flex flex-col gap-1 rounded-sm bg-white-secondary p-4 dark:bg-black-secondary border border-[#ffffff2e]"
   >
     <a
-      class="text-dark-primary text-xl font-semibold dark:text-black-primary"
+      class="text-dark-primary text-xl font-semibold dark:text-white-primary"
       :href="project?.url ?? project?.homepageUrl ?? '#'"
       rel="noreferrer noopener"
       target="_blank"
@@ -19,7 +19,7 @@ defineProps<{
     >
 
     <p
-      class="text-dark-secondary dark:text-black-primary"
+      class="text-dark-secondary dark:text-white-primary"
       :class="{ 'mb-5': project?.languages?.length }"
     >
       {{ project.description }}
