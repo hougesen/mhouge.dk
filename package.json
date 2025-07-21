@@ -40,7 +40,7 @@
     "@nuxt/image": "^1.10.0",
     "@nuxtjs/seo": "3.1.0",
     "eslint-plugin-vuejs-accessibility": "^2.4.1",
-    "nuxt": "^3.17.4",
+    "nuxt": "^4.0.1",
     "prettier": "^3.6.2",
     "vite-plugin-eslint2": "^5.0.4",
     "vue": "^3.5.17",
