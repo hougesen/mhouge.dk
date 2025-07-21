@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { secondsToHHMMSS } from '~/strava';
+import { secondsToHHMMSS } from '~~/strava';
 
 const title = 'Has Mads been lazy this week?';
 

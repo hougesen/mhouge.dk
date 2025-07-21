@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { WakatimeStatResponse } from '~/wakatime';
+import type { WakatimeStatResponse } from '~~/wakatime';
 
 defineProps<{
   metrics: WakatimeStatResponse['data'];

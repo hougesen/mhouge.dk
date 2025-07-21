@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Project } from '~/github';
+import type { Project } from '~~/github';
 
 defineProps<{
   title?: string;

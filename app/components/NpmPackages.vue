@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NpmPackage } from '~/npm';
+import type { NpmPackage } from '~~/npm';
 
 defineProps<{
   packages: NpmPackage[];

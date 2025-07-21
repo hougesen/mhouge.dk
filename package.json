@@ -33,14 +33,15 @@
     "lint:fix": "eslint --fix ."
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.1.1",
-    "@nuxt/content": "^3.5.1",
+    "@biomejs/biome": "^2.1.2",
+    "@nuxt/content": "^3.6.3",
     "@nuxt/devtools": "^2.6.2",
-    "@nuxt/eslint": "^1.4.1",
+    "@nuxt/eslint": "^1.6.0",
     "@nuxt/image": "^1.10.0",
-    "@nuxtjs/seo": "3.1.0",
+    "@nuxtjs/seo": "^3.1.0",
+    "@types/better-sqlite3": "~7.6.13",
     "eslint-plugin-vuejs-accessibility": "^2.4.1",
-    "nuxt": "^3.17.4",
+    "nuxt": "^4.0.1",
     "prettier": "^3.6.2",
     "vite-plugin-eslint2": "^5.0.4",
     "vue": "^3.5.17",
@@ -50,6 +51,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.11",
     "@upstash/redis": "^1.35.1",
+    "better-sqlite3": "^12.2.0",
     "tailwindcss": "^4.1.11"
   },
   "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e"

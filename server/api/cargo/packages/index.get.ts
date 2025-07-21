@@ -1,6 +1,6 @@
 import { Redis } from '@upstash/redis/cloudflare';
-import { REDIS_CACHE_DURATION, REQUEST_CACHE_DURATION } from '~/caching';
-import type { CargoPackage } from '~/cargo';
+import { REDIS_CACHE_DURATION, REQUEST_CACHE_DURATION } from '~~/caching';
+import type { CargoPackage } from '~~/cargo';
 
 type CargoResponse = {
   crates: Array<CargoPackage> | null;
