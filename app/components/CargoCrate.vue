@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { CargoPackage } from '~/cargo';
+import type { CargoPackage } from '~~/cargo';
 
 defineProps<{
   crate: CargoPackage;

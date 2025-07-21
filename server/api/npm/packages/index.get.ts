@@ -1,6 +1,6 @@
 import { Redis } from '@upstash/redis/cloudflare';
-import { REDIS_CACHE_DURATION, REQUEST_CACHE_DURATION } from '~/caching';
-import type { NpmPackage } from '~/npm';
+import { REDIS_CACHE_DURATION, REQUEST_CACHE_DURATION } from '~~/caching';
+import type { NpmPackage } from '~~/npm';
 
 type NpmResponse = {
   objects: Array<NpmPackage>;

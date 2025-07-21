@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { switchHighlightColor } from '~/colors';
-import type { WakatimeStatResponse } from '~/wakatime';
+import type { WakatimeStatResponse } from '~~/wakatime';
 
 defineProps<{
   languages?: WakatimeStatResponse['data']['languages'];
 }>();
 
-const hiddenLanguages = ['other', 'netrw', 'json'];
+const hiddenLanguages = ['other', 'netrw', 'json', 'markdown'];
 
 const defaultLanguages = ['Rust', 'Python', 'TypeScript'];
 
@@ -164,16 +164,7 @@ function easterEgg() {
       <ul
         class="mb-4 ml-8 list-disc text-xl text-black-primary dark:text-white-primary"
       >
-        <li>
-          A tool for automatically
-          <a
-            class="underline"
-            href="https://capturelab.gg?utm_source=mhouge.dk"
-            rel="noreferrer noopener"
-            target="_blank"
-            >capturing highlights in livestreams</a
-          >
-        </li>
+        <li>A tool for automatically capturing highlights in livestreams</li>
 
         <li>
           A platform for running

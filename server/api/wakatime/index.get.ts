@@ -1,6 +1,6 @@
 import { Redis } from '@upstash/redis/cloudflare';
-import { REDIS_CACHE_DURATION, REQUEST_CACHE_DURATION } from '~/caching';
-import type { WakatimeStatResponse } from '~/wakatime';
+import { REDIS_CACHE_DURATION, REQUEST_CACHE_DURATION } from '~~/caching';
+import type { WakatimeStatResponse } from '~~/wakatime';
 
 export default defineCachedEventHandler(
   async (event): Promise<WakatimeStatResponse['data']> => {

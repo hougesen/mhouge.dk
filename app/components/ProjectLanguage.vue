@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Language } from '~/github';
+import type { Language } from '~~/github';
 
 defineProps<{
   language: Language;

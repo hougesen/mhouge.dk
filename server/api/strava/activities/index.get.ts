@@ -1,11 +1,11 @@
 import { Redis } from '@upstash/redis/cloudflare';
-import { REDIS_CACHE_DURATION, REQUEST_CACHE_DURATION } from '~/caching';
+import { REDIS_CACHE_DURATION, REQUEST_CACHE_DURATION } from '~~/caching';
 import {
   pascalCaseToSpaces,
   type Sport,
   type SportActivity,
   type StravaActivity,
-} from '~/strava';
+} from '~~/strava';
 
 export default defineCachedEventHandler(
   async (event): Promise<Sport[]> => {
