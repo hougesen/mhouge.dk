@@ -38,7 +38,7 @@
     "@nuxt/devtools": "^2.6.3",
     "@nuxt/eslint": "^1.9.0",
     "@nuxt/image": "^1.11.0",
-    "@nuxtjs/seo": "^3.1.0",
+    "@nuxtjs/seo": "^3.2.2",
     "@types/better-sqlite3": "~7.6.13",
     "eslint-plugin-vuejs-accessibility": "^2.4.1",
     "nuxt": "^4.0.3",
