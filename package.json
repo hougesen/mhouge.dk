@@ -48,7 +48,7 @@
     "vue-router": "^4.5.1"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.12",
     "@upstash/redis": "^1.35.1",
     "better-sqlite3": "^12.2.0",
