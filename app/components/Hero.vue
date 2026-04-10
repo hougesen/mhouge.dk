@@ -6,7 +6,17 @@ defineProps<{
   languages?: WakatimeStatResponse['data']['languages'];
 }>();
 
-const hiddenLanguages = ['other', 'netrw', 'json', 'markdown'];
+const hiddenLanguages = [
+  'json',
+  'json5',
+  'jsonc',
+  'markdown',
+  'netrw',
+  'other',
+  'toml',
+  'yaml',
+  'yml',
+];
 
 const defaultLanguages = ['Rust', 'Python', 'TypeScript'];
 
@@ -30,11 +40,11 @@ function formatLanguageText(inputLanguages?: string[]) {
   ) {
     const language = l[i];
 
-    if (
-      !language ||
-      !language.length ||
-      hiddenLanguages.includes(language.toLowerCase())
-    ) {
+    if (typeof language !== 'string') {
+      continue;
+    }
+
+    if (hiddenLanguages.includes(language.toLowerCase())) {
       continue;
     }
 

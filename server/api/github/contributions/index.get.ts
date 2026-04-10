@@ -63,6 +63,18 @@ const hardcoded: Project[] = [
     stargazerCount: 5142,
   },
   {
+    name: 'stevearc/conform.nvim',
+    description: 'Lightweight yet powerful formatter plugin for Neovim',
+    homepageUrl: '',
+    stargazerCount: 5041,
+    url: 'https://github.com/stevearc/conform.nvim',
+    languages: [
+      { color: '#000080', name: 'Lua' },
+      { color: '#3572A5', name: 'Python' },
+      { color: '#89e051', name: 'Shell' },
+    ],
+  },
+  {
     name: 'raphamorim/rio',
     description:
       'A hardware-accelerated GPU terminal emulator focusing to run in desktops and browsers.',
@@ -76,15 +88,16 @@ const hardcoded: Project[] = [
     stargazerCount: 4567,
   },
   {
-    name: 'stevearc/conform.nvim',
-    description: 'Lightweight yet powerful formatter plugin for Neovim',
-    homepageUrl: '',
-    stargazerCount: 3522,
-    url: 'https://github.com/stevearc/conform.nvim',
+    name: 'carthage-software/mago',
+    description:
+      'Mago is a toolchain for PHP that aims to provide a set of tools to help developers write better code.',
+    homepageUrl: 'http://mago.carthage.software/',
+    stargazerCount: 2996,
+    url: 'https://github.com/carthage-software/mago',
     languages: [
-      { color: '#000080', name: 'Lua' },
-      { color: '#3572A5', name: 'Python' },
-      { color: '#89e051', name: 'Shell' },
+      { color: '#dea584', name: 'Rust' },
+      { color: '#4F5D95', name: 'PHP' },
+      { color: '#f34b7d', name: 'C++' },
     ],
   },
   {
@@ -182,6 +195,18 @@ const hardcoded: Project[] = [
     stargazerCount: 861,
   },
   {
+    name: 'kgiszczak/shale',
+    description:
+      'Shale is a Ruby object mapper and serializer for JSON, YAML, TOML, CSV and XML. It allows you to parse JSON, YAML, TOML, CSV and XML data and convert it into Ruby data structures, as well as serialize data structures into JSON, YAML, TOML, CSV or XML.',
+    homepageUrl: 'https://shalerb.org/',
+    stargazerCount: 671,
+    url: 'https://github.com/kgiszczak/shale',
+    languages: [
+      { color: '#701516', name: 'Ruby' },
+      { color: '#89e051', name: 'Shell' },
+    ],
+  },
+  {
     name: 'getsentry/sentry-rust',
     description: 'Official Sentry SDK for Rust',
     homepageUrl: 'https://sentry.io/',
@@ -218,12 +243,35 @@ const hardcoded: Project[] = [
     stargazerCount: 343,
   },
   {
+    name: 'umbraco/umbracodocs',
+    description: 'The official Umbraco Documentation',
+    homepageUrl: 'https://docs.umbraco.com',
+    stargazerCount: 289,
+    url: 'https://github.com/umbraco/UmbracoDocs',
+    languages: [
+      { color: '#e38c00', name: 'TSQL' },
+      { color: '#f1e05a', name: 'JavaScript' },
+    ],
+  },
+  {
     name: 'mason-org/mason-registry',
     description: 'Core registry for mason.nvim.',
     homepageUrl: 'https://mason-registry.dev/registry/list',
     url: 'https://github.com/mason-org/mason-registry',
     languages: [],
     stargazerCount: 168,
+  },
+  {
+    name: 'codereport/hoogle-translate',
+    homepageUrl: 'https://www.hoogletranslate.com',
+    stargazerCount: 133,
+    description: '',
+    url: 'https://github.com/codereport/hoogle-translate',
+    languages: [
+      { color: '#db5855', name: 'Clojure' },
+      { color: '#3572A5', name: 'Python' },
+      { color: '#663399', name: 'CSS' },
+    ],
   },
   {
     name: 'nvimtools/none-ls-extras.nvim',
@@ -274,6 +322,18 @@ const hardcoded: Project[] = [
     stargazerCount: 47,
   },
   {
+    name: 'mistweaverco/zana-registry',
+    description: 'The package 📦 registry 📡 of Zana.',
+    homepageUrl: 'https://registry.getzana.net',
+    stargazerCount: 15,
+    url: 'https://github.com/mistweaverco/zana-registry',
+    languages: [
+      { color: '#3178c6', name: 'TypeScript' },
+      { color: '#ff3e00', name: 'Svelte' },
+      { color: '#89e051', name: 'Shell' },
+    ],
+  },
+  {
     name: 'actechworld/vue-onboarding-tour',
     description:
       'VueOnboardingTour is a Vue.js component that creates guided, step-by-step onboarding tours to help users navigate your app intuitively.',
@@ -308,6 +368,18 @@ const hardcoded: Project[] = [
     stargazerCount: 7,
   },
   {
+    name: 'shipmondo/prestashop_shipping_module',
+    description: 'Shipmondo Shipping Module for Prestashop',
+    homepageUrl: '',
+    stargazerCount: 3,
+    url: 'https://github.com/shipmondo/prestashop_shipping_module',
+    languages: [
+      { color: '#4F5D95', name: 'PHP' },
+      { color: '#c1d026', name: 'Twig' },
+      { color: '#f1e05a', name: 'JavaScript' },
+    ],
+  },
+  {
     name: 'i18nhero/cli',
     description: 'Cli for easily managing your  i18nhero locale files ',
     homepageUrl: 'https://i18nhero.com',
@@ -319,6 +391,7 @@ const hardcoded: Project[] = [
     ],
   },
 ];
+
 export default defineCachedEventHandler(
   async (event): Promise<Project[]> => {
     const config = useRuntimeConfig(event);

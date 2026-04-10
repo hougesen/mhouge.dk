@@ -25,7 +25,7 @@ defineProps<{
       {{ project.description }}
     </p>
 
-    <div v-if="project?.languages?.length" class="mt-auto flex gap-2">
+    <div v-if="project?.languages?.length" class="mt-auto flex gap-3">
       <ProjectLanguage
         v-for="(language, languageIndex) of project?.languages ?? []"
         :key="languageIndex"
